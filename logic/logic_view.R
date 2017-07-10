@@ -1,3 +1,3 @@
 output$table <- renderDataTable({
-  filtered()      
+  final_sample()      
 })
