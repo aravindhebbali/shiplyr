@@ -1,0 +1,27 @@
+library(shiny)
+library(descriptr, lib.loc = "C:/Users/HP/Documents/R/win-library")
+library(olsrr, lib.loc = "C:/Users/HP/Documents/R/win-library"  )
+library(inferr, lib.loc = "C:/Users/HP/Documents/R/win-library"  )
+library(dplyr)
+library(ggplot2)
+library(grid)
+library(gridExtra)
+library(purrr)
+library(tidyr)
+library(tibble)
+library(readxl)
+library(readr)
+library(jsonlite)
+library(magrittr)
+library(tools)
+
+shinyServer(function(input, output, session) {
+
+    source('logic/logic_upload.R', local = T)
+    source('logic/logic_transform2.R', local = T)
+    source('logic/logic_select.R', local = T)
+    source('logic/logic_filter.R', local = T)
+    source('logic/logic_screen.R', local = T)
+    source('logic/logic_view.R', local = T)
+    
+})
