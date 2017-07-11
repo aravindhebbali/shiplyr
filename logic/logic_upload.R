@@ -114,26 +114,59 @@ data6 <- reactive({
 })
 
 
+observe({
+  updateSelectInput(
+    session,
+    inputId = 'sel_data',
+    label = '',
+    choices = c(input$file1$name, input$file2$name, input$file3$name,
+      input$file4$name, input$file5$name, input$file6$name),
+    selected = ''
+  )
+})
+
+ext_type <- reactive({
+    ext <- tools::file_ext(input$sel_data)
+})
+
+
 data <- eventReactive(input$submit_seldata, {
   
-  if (input$sel_data == 'csv') {
+  if (ext_type() == 'csv') {
     data1()
-  } else if (input$sel_data == 'excel') {
+  } else if (ext_type() == 'excel') {
     data2()
-  } else if (input$sel_data == 'json') {
+  } else if (ext_type() == 'json') {
     data3()
-  } else if (input$sel_data == 'sas') {
+  } else if (ext_type() == 'sas') {
     data4()
-  } else if (input$sel_data == 'spss') {
+  } else if (ext_type() == 'spss') {
     data5()
-  } else if (input$sel_data == 'stata') {
+  } else if (ext_type() == 'stata') {
     data6()
   }
+
+  # if (input$sel_data == 'csv') {
+  #   data1()
+  # } else if (input$sel_data == 'excel') {
+  #   data2()
+  # } else if (input$sel_data == 'json') {
+  #   data3()
+  # } else if (input$sel_data == 'sas') {
+  #   data4()
+  # } else if (input$sel_data == 'spss') {
+  #   data5()
+  # } else if (input$sel_data == 'stata') {
+  #   data6()
+  # }
 
 })
 
 
-
+observeEvent(input$submit_seldata, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_transform')
+})
 
 
 
