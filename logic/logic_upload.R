@@ -134,15 +134,17 @@ data <- eventReactive(input$submit_seldata, {
   
   if (ext_type() == 'csv') {
     data1()
-  } else if (ext_type() == 'excel') {
+  } else if (ext_type() == 'xls') {
+    data2()
+  } else if (ext_type() == 'xlsx') {
     data2()
   } else if (ext_type() == 'json') {
     data3()
-  } else if (ext_type() == 'sas') {
+  } else if (ext_type() == 'sas7bdat') {
     data4()
-  } else if (ext_type() == 'spss') {
+  } else if (ext_type() == 'sav') {
     data5()
-  } else if (ext_type() == 'stata') {
+  } else if (ext_type() == 'dta') {
     data6()
   }
 

@@ -198,6 +198,9 @@ observeEvent(input$submit_samp_obs_size, {
 	final_sample$d <- samp2()
 })
 
+observeEvent(input$button_sample_no, {
+	final_sample$d <- filt_data$p
+})
 
 
 # output$samp_type <- renderUI({
