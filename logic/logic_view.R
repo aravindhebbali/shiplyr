@@ -1,3 +1,3 @@
 output$table <- renderDataTable({
-  final_sample()      
+ 	final_sample$d
 })

@@ -1,5 +1,5 @@
 # output
 output$screen <- renderPrint({
-    screener(filtered())
+    screener(final_sel())
 })
 

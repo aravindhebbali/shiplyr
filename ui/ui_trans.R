@@ -4,6 +4,7 @@ tabPanel('Trans', value = 'tab_trans', icon = icon('database'),
         well = FALSE,
         widths = c(2, 10),
 
+        source('ui/ui_seldata.R', local = TRUE)[[1]],
         source('ui/ui_transform2.R', local = TRUE)[[1]],
         source('ui/ui_select.R', local = TRUE)[[1]],
         source('ui/ui_filter.R', local = TRUE)[[1]]

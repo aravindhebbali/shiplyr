@@ -99,3 +99,8 @@ library(stringr)
         final <- eventReactive(input$apply_changes, {
             data.frame(copy(), stringsAsFactors = F)
         })
+
+observeEvent(input$apply_changes, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_selvar')
+})
