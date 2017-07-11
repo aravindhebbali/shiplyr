@@ -1,28 +1,41 @@
 tabPanel('Select Variables', value = 'tab_selvar',
 
 	fluidPage(
-		
+
 		fluidRow(
 			column(12, align = 'center',
-				selectInput(
-					inputId = 'dplyr_selvar',
-					label = 'Select Variables:',
-					choices = '',
-					selected = '',
-					multiple = TRUE,
-					selectize = TRUE
-				)
+				h4('Do you want to select variables?')
 			)
 		),
 
 		fluidRow(
-			column(12, align = 'center',
-        br(),
-        br(),
-        actionButton(inputId = 'submit_dply_selvar', label = 'Submit', width = '120px', icon = icon('check')),
-        bsTooltip("submit_seldata", "Click here to select variables.",
-                      "bottom", options = list(container = "body"))
-      )
+			
+			column(6, align = 'right',
+				actionButton(
+					inputId = 'button_selvar_yes',
+					label = 'Yes',
+					width = '120px'
+				)
+			),
+
+			column(6, align = 'left',
+				actionButton(
+					inputId = 'button_selvar_no',
+					label = 'No',
+					width = '120px'
+				)
+			)
+
+		),
+
+		fluidRow(
+			br(),
+			br(),
+			uiOutput('show_sel_button')
+		),
+
+		fluidRow(
+			uiOutput('sub_sel_button')
 		)
 
 	)
