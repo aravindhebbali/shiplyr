@@ -202,7 +202,9 @@ observeEvent(input$button_sample_no, {
 	final_sample$d <- filt_data$p
 })
 
-
+observeEvent(input$button_sample_no, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_partition')
+})
 # output$samp_type <- renderUI({
 
 # 	if (input$data_samp == 'Percentage') {
