@@ -1,18 +1,18 @@
 library(stringr)
 
     output$trans_try <- renderUI({
-        ncol <- as.integer(ncol(data()))
+        ncol <- as.integer(ncol(uploadata$t))
 
         lapply(1:ncol, function(i) {
           fluidRow(
             column(3,
               selectInput(paste("n_col_", i), label = '', width = '150px',
-                choices = names(data())[i], selected  = names(data())[i])
+                choices = names(uploadata$t)[i], selected  = names(uploadata$t)[i])
             ),
             column(3,
               textInput(paste("new_name_", i),
                           label = '',  width = '150px',
-                          value = names(data())[i])
+                          value = names(uploadata$t)[i])
             ),
             column(3,
               selectInput(paste0("data_type_", i),
@@ -42,9 +42,8 @@ library(stringr)
         })
     })
 
-
     original <- reactive({
-        data()
+        uploadata$t
     })
 
     save_names <- reactive({
@@ -56,7 +55,7 @@ library(stringr)
     })
 
     data_types <- reactive({
-        ncol <- as.integer(ncol(data()))
+        ncol <- as.integer(ncol(uploadata$t))
 
         collect <- list(lapply(1:ncol, function(i) {
             input[[paste0("data_type_", i)]]
@@ -66,7 +65,7 @@ library(stringr)
     })
 
     new_names <- reactive({
-        ncol <- as.integer(ncol(data()))
+        ncol <- as.integer(ncol(uploadata$t))
 
         collect <- list(lapply(1:ncol, function(i) {
             input[[paste("new_name_", i)]]
@@ -74,7 +73,40 @@ library(stringr)
 
         colors <- unlist(collect)
         colnames <- str_replace(colors, " ", "_")
-    })
+    })  
+
+    # original <- reactive({
+    #     data()
+    # })
+
+    # save_names <- reactive({
+    #     names(original())
+    # })
+
+    # n <- reactive({
+    #     length(original())
+    # })
+
+    # data_types <- reactive({
+    #     ncol <- as.integer(ncol(data()))
+
+    #     collect <- list(lapply(1:ncol, function(i) {
+    #         input[[paste0("data_type_", i)]]
+    #     }))
+
+    #     colors <- unlist(collect)
+    # })
+
+    # new_names <- reactive({
+    #     ncol <- as.integer(ncol(data()))
+
+    #     collect <- list(lapply(1:ncol, function(i) {
+    #         input[[paste("new_name_", i)]]
+    #     }))
+
+    #     colors <- unlist(collect)
+    #     colnames <- str_replace(colors, " ", "_")
+    # })
 
 
 

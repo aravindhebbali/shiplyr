@@ -130,23 +130,60 @@ ext_type <- reactive({
 })
 
 
-data <- eventReactive(input$submit_seldata, {
+# choosing sample data
+sampdata <- reactiveValues(s = NULL)
+
+observeEvent(input$german_data, {
+  load(GermanCredit)
+  sampdata$s <- GermanCredit
+})
+
+observeEvent(input$iris_data, {
+  sampdata$s <- iris
+})
+
+observeEvent(input$mtcars_data, {
+  sampdata$s <- mtcars
+})
+
+observeEvent(input$hsb_data, {
+  sampdata$s <- hsb
+})
+
+observeEvent(input$mpg_data, {
+  sampdata$s <- mpg
+})
+
+observeEvent(input$diamonds_data, {
+  sampdata$s <- diamonds
+})
+
+uploadata <- reactiveValues(t = NULL)
+
+observeEvent(input$submit_seldata, {
   
   if (ext_type() == 'csv') {
-    data1()
+    uploadata$t <- data1()
   } else if (ext_type() == 'xls') {
-    data2()
+    uploadata$t <- data2()
   } else if (ext_type() == 'xlsx') {
-    data2()
+    uploadata$t <- data2()
   } else if (ext_type() == 'json') {
-    data3()
+    uploadata$t <- data3()
   } else if (ext_type() == 'sas7bdat') {
-    data4()
+    uploadata$t <- data4()
   } else if (ext_type() == 'sav') {
-    data5()
+    uploadata$t <- uploadata$t <- data5()
   } else if (ext_type() == 'dta') {
-    data6()
+    uploadata$t <- data6()
   }
+
+})
+
+observeEvent(input$use_sample_data, {
+  uploadata$t <- sampdata$s
+})
+
 
   # if (input$sel_data == 'csv') {
   #   data1()
@@ -162,8 +199,14 @@ data <- eventReactive(input$submit_seldata, {
   #   data6()
   # }
 
-})
 
+
+
+
+observeEvent(input$use_sample_data, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_transform')
+})
 
 observeEvent(input$submit_seldata, {
   updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
