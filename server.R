@@ -18,6 +18,7 @@ library(caret)
 
 shinyServer(function(input, output, session) {
 
+		source('logic/logic_dataoptions.R', local = T)
     source('logic/logic_upload.R', local = T)
     source('logic/logic_transform2.R', local = T)
     source('logic/logic_select.R', local = T)

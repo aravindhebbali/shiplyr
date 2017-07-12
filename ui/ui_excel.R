@@ -32,7 +32,8 @@ tabPanel('Excel', value = 'tab_excel',
                     label = 'Sheet',
                     value = 1,
                     min = 1,
-                    step = 1
+                    step = 1,
+                    width = '120px'
                   )  
                 )
             )
