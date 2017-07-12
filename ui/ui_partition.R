@@ -4,7 +4,7 @@ tabPanel('Partition', value = 'tab_partition', icon = icon('database'),
 
 		fluidRow(
 			column(12, align = 'center',
-				h5('Do you want to partition data into training set and testing set?')
+				h4('Do you want to partition data into training set and testing set?')
 			)
 		),
 

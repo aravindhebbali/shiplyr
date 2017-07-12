@@ -5,7 +5,7 @@ tabPanel('Filter', value = 'tab_filter',
 		fluidRow(
 
 			column(12, align = 'center',
-				h5('Do you want to filter data?')
+				h4('Do you want to filter data?')
 			),
 
 			column(6, align = 'right',

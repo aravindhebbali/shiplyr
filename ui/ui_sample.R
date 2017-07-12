@@ -4,8 +4,7 @@ tabPanel('Sample', value = 'tab_sample', icon = icon('database'),
 
 		fluidRow(
 			column(12, align = 'center',
-				h5('Draw a random sample of the data?'),
-				br()
+				h4('Draw a random sample of the data?')
 			)
 		),
 
