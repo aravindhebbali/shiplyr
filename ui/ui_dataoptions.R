@@ -2,9 +2,11 @@ tabPanel('Data Sources', value = 'tab_datasources',
 
 	fluidPage(
 
+		includeCSS("mystyle.css"),
+
 		fluidRow(
 			column(12, align = 'center',
-				h5('Use sample data or upload files?')
+				h4('Use sample data or upload a file')
 			)
 		),
 

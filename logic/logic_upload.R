@@ -134,7 +134,7 @@ ext_type <- reactive({
 sampdata <- reactiveValues(s = NULL)
 
 observeEvent(input$german_data, {
-  load(GermanCredit)
+  data("GermanCredit")
   sampdata$s <- GermanCredit
 })
 
@@ -200,9 +200,6 @@ observeEvent(input$use_sample_data, {
   # }
 
 
-
-
-
 observeEvent(input$use_sample_data, {
   updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
   updateNavlistPanel(session, 'navlist_trans', 'tab_transform')
@@ -213,11 +210,65 @@ observeEvent(input$submit_seldata, {
   updateNavlistPanel(session, 'navlist_trans', 'tab_transform')
 })
 
+observeEvent(input$csv2datasrc, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_upload')
+  updateNavlistPanel(session, 'navlist_up', 'tab_datasources')
+})
 
+observeEvent(input$csv2datatrans, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_seldata')
+})
 
+observeEvent(input$excel2datasrc, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_upload')
+  updateNavlistPanel(session, 'navlist_up', 'tab_datasources')
+})
 
+observeEvent(input$excel2datatrans, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_seldata')
+})
 
+observeEvent(input$json2datasrc, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_upload')
+  updateNavlistPanel(session, 'navlist_up', 'tab_datasources')
+})
 
+observeEvent(input$json2datatrans, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_seldata')
+})
+
+observeEvent(input$stata2datasrc, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_upload')
+  updateNavlistPanel(session, 'navlist_up', 'tab_datasources')
+})
+
+observeEvent(input$stata2datatrans, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_seldata')
+})
+
+observeEvent(input$spss2datasrc, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_upload')
+  updateNavlistPanel(session, 'navlist_up', 'tab_datasources')
+})
+
+observeEvent(input$spss2datatrans, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_seldata')
+})
+
+observeEvent(input$sas2datasrc, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_upload')
+  updateNavlistPanel(session, 'navlist_up', 'tab_datasources')
+})
+
+observeEvent(input$sas2datatrans, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_seldata')
+})
 
 
 

@@ -2,6 +2,8 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 
 	fluidPage(
 
+		includeCSS("mystyle.css"),
+
 		fluidRow(
 
 			column(12,
@@ -11,6 +13,8 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 					tabPanel('CSV', value = 'tab_upload_csv',
 
 						fluidPage(
+
+							br(),
 
 			        fluidRow(
 			          column(8, align = 'left',
@@ -50,6 +54,22 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 			                    selectInput('quote', 'Quote',
 			                        choices = c('None' = '', 'Double Quote' = '"', 'Single Quote' = "'"), selected = '')
 			                )
+			            ),
+
+			            br(),
+			            br(),
+			            br(),
+
+			            fluidRow(
+			            	
+			            	column(6, align = 'left',
+			            		actionButton(inputId='csv2datasrc', label="Data Sources", icon = icon("long-arrow-left"))
+			            	),
+
+			            	column(6, align = 'right',
+			            		actionButton(inputId='csv2datatrans', label="Data Selection", icon = icon("long-arrow-right"))
+			            	)
+
 			            )
 
 			        )
@@ -58,6 +78,8 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 					tabPanel('Excel', value = 'tab_upload_excel',
 
 						fluidPage(
+
+							br(),
 
 			        fluidRow(
 			          column(8, align = 'left',
@@ -93,12 +115,38 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 			                    width = '120px'
 			                  )  
 			                )
+			            ),
+
+			            br(),
+			            br(),
+
+			            br(),
+			            br(),
+
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+
+			            fluidRow(
+			            	
+			            	column(6, align = 'left',
+			            		actionButton(inputId='excel2datasrc', label="Data Sources", icon = icon("long-arrow-left"))
+			            	),
+
+			            	column(6, align = 'right',
+			            		actionButton(inputId='excel2datatrans', label="Data Selection", icon = icon("long-arrow-right"))
+			            	)
+
 			            )
 
 			        )
 
 					),
 					tabPanel('JSON', value = 'tab_upload_json',
+
+						br(),
 
 						fluidPage(
 
@@ -123,12 +171,40 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 			                      accept = '.json'
 			                    )
 			                )
+			            ),
+
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+
+			            fluidRow(
+			            	
+			            	column(6, align = 'left',
+			            		actionButton(inputId='json2datasrc', label="Data Sources", icon = icon("long-arrow-left"))
+			            	),
+
+			            	column(6, align = 'right',
+			            		actionButton(inputId='json2datatrans', label="Data Selection", icon = icon("long-arrow-right"))
+			            	)
+
 			            )
 
 			        )
 
 					),
 					tabPanel('STATA', value = 'tab_upload_stata',
+
+						br(),
 
 						fluidPage(
 
@@ -153,12 +229,40 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 			                      accept = '.dta'
 			                    )
 			                )
+			            ),
+
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+
+			            fluidRow(
+			            	
+			            	column(6, align = 'left',
+			            		actionButton(inputId='stata2datasrc', label="Data Sources", icon = icon("long-arrow-left"))
+			            	),
+
+			            	column(6, align = 'right',
+			            		actionButton(inputId='stata2datatrans', label="Data Selection", icon = icon("long-arrow-right"))
+			            	)
+
 			            )
 
 			        )
 
 					),
 					tabPanel('SPSS', value = 'tab_upload_spss',
+
+						br(),
 
 						fluidPage(
 
@@ -183,12 +287,40 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 			                      accept = '.sav'
 			                    )
 			                )
+			            ),
+
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+
+			            fluidRow(
+			            	
+			            	column(6, align = 'left',
+			            		actionButton(inputId='spss2datasrc', label="Data Sources", icon = icon("long-arrow-left"))
+			            	),
+
+			            	column(6, align = 'right',
+			            		actionButton(inputId='spss2datatrans', label="Data Selection", icon = icon("long-arrow-right"))
+			            	)
+
 			            )
 
 			        )
 
 					),
 					tabPanel('SAS', value = 'tab_upload_sas',
+
+						br(),
 
 						fluidPage(
 
@@ -213,6 +345,32 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 			                      accept = '.sas7bdat'
 			                    )
 			                )
+			            ),
+
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+
+			            fluidRow(
+			            	
+			            	column(6, align = 'left',
+			            		actionButton(inputId='sas2datasrc', label="Data Sources", icon = icon("long-arrow-left"))
+			            	),
+
+			            	column(6, align = 'right',
+			            		actionButton(inputId='sas2datatrans', label="Data Selection", icon = icon("long-arrow-right"))
+			            	)
+
 			            )
 
 			        )
