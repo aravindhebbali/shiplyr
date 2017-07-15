@@ -26,8 +26,15 @@ tabPanel('Filter', value = 'tab_filter',
 
 		),
 
+		br(),
+		br(),
+
 		fluidRow(
 			uiOutput('filt_render')
+		),
+
+		fluidRow(
+			uiOutput('filt_trans')
 		)
 
 	)

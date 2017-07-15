@@ -43,6 +43,15 @@ output$filt_render <- renderUI(
 	filt_ui()
 )
 
+observeEvent(input$button_filt_yes, {
+	updateSelectInput(
+  	session,
+    inputId = "dplyr_filter",
+    choices = names(final_sel$a),
+    selected = names(final_sel$a)
+  )
+})
+
 observeEvent(input$submit_dply_selvar, {
 	updateSelectInput(
   	session,
@@ -52,18 +61,15 @@ observeEvent(input$submit_dply_selvar, {
   )
 })
 
-observeEvent(input$button_selvar_no, {
-	updateSelectInput(
-  	session,
-    inputId = "dplyr_filter",
-    choices = names(final()),
-    selected = names(final())
-  )
-})
+
 
 filt_data <- reactiveValues(p = NULL)
 
 observeEvent(input$submit_dply_selvar, {
+  filt_data$p <- final_sel$a
+})
+
+observeEvent(input$button_filt_yes, {
   filt_data$p <- final_sel$a
 })
 
@@ -84,6 +90,41 @@ observeEvent(input$button_filt_no, {
 })
 
 
+filttrans <- eventReactive(input$button_filt_yes, {
+	
+	fluidRow(
+		
+		br(),
+		br(),
+		br(),
+		br(),
+		br(),
+			            	
+		column(6, align = 'left',
+			actionButton(inputId='filt2dvarsel', label="Select Variables", icon = icon("long-arrow-left"))
+		),
+
+		column(6, align = 'right',
+			actionButton(inputId='filt2screen', label="Screen Data", icon = icon("long-arrow-right"))
+		)
+
+	)
+
+})
+
+output$filt_trans <- renderUI({
+	filttrans()
+})
+
+observeEvent(input$filt2dvarsel, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_selvar')
+})
+
+observeEvent(input$filt2screen, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_scr')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_screen')
+})
 
 
 # filtered <- eventReactive(input$submit_dply_filt, {
