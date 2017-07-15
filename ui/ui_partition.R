@@ -28,6 +28,9 @@ tabPanel('Partition', value = 'tab_partition', icon = icon('database'),
 
 		),
 
+		br(),
+		br(),
+
 		fluidRow(
 			uiOutput('ui_partition')
 		)
