@@ -19,7 +19,7 @@ library(caret)
 
 shinyServer(function(input, output, session) {
 
-		source('logic/logic_dataoptions.R', local = T)
+	source('logic/logic_dataoptions.R', local = T)
     source('logic/logic_upload.R', local = T)
     source('logic/logic_transform2.R', local = T)
     source('logic/logic_select.R', local = T)
@@ -28,6 +28,13 @@ shinyServer(function(input, output, session) {
     source('logic/logic_sample.R', local = T)
     source('logic/logic_partition.R', local = T)
     source('logic/logic_view.R', local = T)
+    source('logic/logic_summary.R', local = T)
+    source('logic/logic_freq_qual.R', local = T)
+    source('logic/logic_freq_quant.R', local = T)
+    source('logic/logic_cross.R', local = T)
+    source('logic/logic_mult1.R', local = T)
+    source('logic/logic_mult2.R', local = T)
+    source('logic/logic_group_summary.R', local = T)
     
 })
 

@@ -10,6 +10,7 @@ shinyUI(
 
     source('ui/ui_welcome.R', local = TRUE)[[1]],
     source('ui/ui_data.R', local = TRUE)[[1]],
+    source('ui/ui_analyze.R', local = TRUE)[[1]],
     source('ui/ui_about.R', local = TRUE)[[1]]
 
 ))
