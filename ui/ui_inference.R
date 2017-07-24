@@ -14,8 +14,8 @@ tabPanel('Inference', value = 'tab_infer', icon = icon('cogs'),
 				source('ui/ui_tsprop.R', local = TRUE)[[1]],
 				source('ui/ui_anova.R', local = TRUE)[[1]],
 				source('ui/ui_levene.R', local = TRUE)[[1]],
-				source('ui/ui_chigof.R', local = TRUE)[[1]]
-				# source('ui/ui_chict.R', local = TRUE)[[1]],
+				source('ui/ui_chigof.R', local = TRUE)[[1]],
+				source('ui/ui_chict.R', local = TRUE)[[1]]
 				# source('ui/ui_cochran.R', local = TRUE)[[1]],
 				# source('ui/ui_runs.R', local = TRUE)[[1]],
 				# source('ui/ui_mcnemar.R', local = TRUE)[[1]]
