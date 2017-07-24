@@ -47,6 +47,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_levene.R', local = T)
     source('logic/logic_chigof.R', local = T)
     source('logic/logic_chict.R', local = T)
+    source('logic/logic_cochran.R', local = T)
     
 })
 
