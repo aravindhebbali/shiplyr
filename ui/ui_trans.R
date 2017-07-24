@@ -1,4 +1,4 @@
-tabPanel('Trans', value = 'tab_trans', icon = icon('database'),
+tabPanel('Transform', value = 'tab_trans', icon = icon('database'),
 
     navlistPanel(id = 'navlist_trans',
         well = FALSE,

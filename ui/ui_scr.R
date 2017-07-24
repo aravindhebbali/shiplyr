@@ -1,4 +1,4 @@
-tabPanel('Scr', value = 'tab_scr', icon = icon('database'),
+tabPanel('Screen', value = 'tab_scr', icon = icon('database'),
 
     navlistPanel(id = 'navlist_scr',
         well = FALSE,
