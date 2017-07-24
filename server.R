@@ -1,7 +1,10 @@
 library(shiny)
-library(descriptr, lib.loc = "C:/Users/HP/Documents/R/win-library")
-library(olsrr, lib.loc = "C:/Users/HP/Documents/R/win-library"  )
-library(inferr, lib.loc = "C:/Users/HP/Documents/R/win-library"  )
+# library(descriptr, lib.loc = "C:/Users/HP/Documents/R/win-library")
+# library(olsrr, lib.loc = "C:/Users/HP/Documents/R/win-library"  )
+# library(inferr, lib.loc = "C:/Users/HP/Documents/R/win-library"  )
+library(descriptr, lib.loc = "C:/Program Files/R/R-3.4.1/library")
+library(olsrr, lib.loc = "C:/Program Files/R/R-3.4.1/library")
+library(inferr, lib.loc = "C:/Program Files/R/R-3.4.1/library")
 library(dplyr)
 library(ggplot2)
 library(grid)
@@ -65,6 +68,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_pie3d.R', local = T)
     source('logic/logic_scatter.R', local = T)
     source('logic/logic_regress.R', local = T)
+    source('logic/logic_mselection2.R', local = T)
     
 })
 
