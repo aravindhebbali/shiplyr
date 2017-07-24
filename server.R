@@ -39,6 +39,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_itest.R', local = T)
     source('logic/logic_ptest.R', local = T)
     source('logic/logic_binomtest.R', local = T)
+    source('logic/logic_osvar.R', local = T)
     
 })
 
