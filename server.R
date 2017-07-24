@@ -69,6 +69,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_scatter.R', local = T)
     source('logic/logic_regress.R', local = T)
     source('logic/logic_mselection2.R', local = T)
+    source('logic/logic_resdiagtrial.R', local = T)
     
 })
 
