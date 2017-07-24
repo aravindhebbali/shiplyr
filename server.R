@@ -72,6 +72,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_resdiagtrial.R', local = T)
     source('logic/logic_hetero.R', local = T)
     source('logic/logic_collin.R', local = T)
+    source('logic/logic_inflobs2.R', local = T)
     
 })
 

@@ -19,7 +19,7 @@ all_use_n <- reactive({
   k <- model()
   object <- k$model
   formul <- formula(object)  
-  data <- eval(object$call$data)
+  data <- final_split$train
   n <- lm(formul, data = data)
   n
 })
