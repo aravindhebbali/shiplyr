@@ -6,8 +6,8 @@ tabPanel('Inference', value = 'tab_infer', icon = icon('cogs'),
 
         source('ui/ui_ttest.R', local = TRUE)[[1]],
         source('ui/ui_indttest.R', local = TRUE)[[1]],
-        source('ui/ui_ptest.R', local = TRUE)[[1]]
-    #     source('ui/ui_binomtest.R', local = TRUE)[[1]],
+        source('ui/ui_ptest.R', local = TRUE)[[1]],
+        source('ui/ui_binomtest.R', local = TRUE)[[1]]
 				# source('ui/ui_osvar.R', local = TRUE)[[1]],
 				# source('ui/ui_tsvar.R', local = TRUE)[[1]],
 				# source('ui/ui_osprop.R', local = TRUE)[[1]],
