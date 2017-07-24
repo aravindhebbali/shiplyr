@@ -35,6 +35,9 @@ shinyServer(function(input, output, session) {
     source('logic/logic_mult1.R', local = T)
     source('logic/logic_mult2.R', local = T)
     source('logic/logic_group_summary.R', local = T)
+    source('logic/logic_ttest.R', local = T)
+    source('logic/logic_itest.R', local = T)
+    source('logic/logic_ptest.R', local = T)
     
 })
 
