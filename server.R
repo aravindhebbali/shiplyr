@@ -64,6 +64,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_pie.R', local = T)
     source('logic/logic_pie3d.R', local = T)
     source('logic/logic_scatter.R', local = T)
+    source('logic/logic_regress.R', local = T)
     
 })
 
