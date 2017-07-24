@@ -12,3 +12,14 @@ model <- reactive({
 output$regress_out <- renderPrint({
     d_regress()
 })
+
+
+# main regression
+all_use_n <- reactive({
+  k <- model()
+  object <- k$model
+  formul <- formula(object)  
+  data <- eval(object$call$data)
+  n <- lm(formul, data = data)
+  n
+})

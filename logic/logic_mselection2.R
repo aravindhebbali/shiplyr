@@ -679,15 +679,15 @@ output$ui_mselplot <- renderUI({
   }
 })
 
-# main regression
-all_use_n <- reactive({
-  k <- model()
-  object <- k$model
-  formula <- formula(object)  
-  data <- eval(object$call$data)
-  n <- lm(formula, data = data)
-  n
-})
+# # main regression
+# all_use_n <- reactive({
+#   k <- model()
+#   object <- k$model
+#   formul <- formula(object)  
+#   data <- eval(object$call$data)
+#   n <- lm(formul, data = data)
+#   n
+# })
 
 # all subset
 # d_allsub <- eventReactive(input$submit_allsub, {
