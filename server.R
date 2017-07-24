@@ -43,6 +43,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_tsvar.R', local = T)
     source('logic/logic_osprop.R', local = T)
     source('logic/logic_tsprop.R', local = T)
+    source('logic/logic_anova.R', local = T)
     
 })
 
