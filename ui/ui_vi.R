@@ -1,4 +1,4 @@
-tabPanel('Vi', value = 'tab_vi', icon = icon('database'),
+tabPanel('View', value = 'tab_vi', icon = icon('database'),
 
     navlistPanel(id = 'navlist_vi',
         well = FALSE,
