@@ -10,8 +10,8 @@ tabPanel('Inference', value = 'tab_infer', icon = icon('cogs'),
         source('ui/ui_binomtest.R', local = TRUE)[[1]],
 				source('ui/ui_osvar.R', local = TRUE)[[1]],
 				source('ui/ui_tsvar.R', local = TRUE)[[1]],
-				source('ui/ui_osprop.R', local = TRUE)[[1]]
-				# source('ui/ui_tsprop.R', local = TRUE)[[1]],
+				source('ui/ui_osprop.R', local = TRUE)[[1]],
+				source('ui/ui_tsprop.R', local = TRUE)[[1]]
 				# source('ui/ui_anova.R', local = TRUE)[[1]],
 				# source('ui/ui_levene.R', local = TRUE)[[1]],
 				# source('ui/ui_chigof.R', local = TRUE)[[1]],
