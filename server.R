@@ -75,6 +75,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_inflobs2.R', local = T)
     source('logic/logic_mfit2.R', local = T)
     source('logic/logic_regdiag.R', local = T)
+    source('logic/logic_gscatter.R', local = T)
 })
 
 
