@@ -65,11 +65,11 @@ observeEvent(input$button_split_no, {
 })
 
 observeEvent(input$submit_part_train_per, {
-	updateNavbarPage(session, 'mainpage', selected = 'tab_vi')
-	updateNavlistPanel(session, 'navlist_vi', 'tab_view')
+	updateNavbarPage(session, 'mainpage', selected = 'tab_home_analyze')
+	updateNavlistPanel(session, 'navlist_home', 'tab_analyze_home')
 })
 
 observeEvent(input$button_split_no, {
-	updateNavbarPage(session, 'mainpage', selected = 'tab_vi')
-	updateNavlistPanel(session, 'navlist_vi', 'tab_view')
+	updateNavbarPage(session, 'mainpage', selected = 'tab_home_analyze')
+	updateNavlistPanel(session, 'navlist_home', 'tab_analyze_home')
 })
