@@ -1,4 +1,4 @@
-ggbox <- function(data, y, notch = FALSE, fill = 'blue', col = 'black',
+ggbox <- function(data, x, y, notch = FALSE, fill = 'blue', col = 'black',
                   o_col = 'red', o_fill = 'yellow', o_shape = 22,
                   o_alpha = 0.8, o_size = 2, add_jitter = FALSE, 
                   j_width = 0.1, j_height = 0.1, j_fill = 'blue',
@@ -16,11 +16,11 @@ ggbox <- function(data, y, notch = FALSE, fill = 'blue', col = 'black',
                   yax_col = 'black', yax_fam = 'serif', 
                   yax_face = 'plain', yax_size = 10, 
                   yax_hjust = 0.5, yax_vjust = 0.5,
-                  remove_xax = TRUE, remove_yax = FALSE,
+                  remove_xax = FALSE, remove_yax = FALSE,
                   add_text = FALSE, xloc = NA, yloc = NA, 
                   label = NA, tex_color = NA, tex_size = NA) {
   
-  p <- ggplot(data, aes_string(x = 1, y = y)) + 
+  p <- ggplot(data, aes_string(x = x, y = y)) + 
     geom_boxplot(notch = notch, fill = fill, color = col,
                  outlier.color = o_col, outlier.fill = o_fill,
                  outlier.shape = o_shape, outlier.alpha = o_alpha,
@@ -30,7 +30,7 @@ ggbox <- function(data, y, notch = FALSE, fill = 'blue', col = 'black',
     p <- p + geom_jitter(width = j_width, height = j_height, alpha = j_alpha,
       fill = j_fill, col = j_col, shape = j_shape, size = j_size)
   }
-    
+  
   
   p <- p + ggtitle(title) + xlab(xlab) + ylab(ylab) +
     theme(
@@ -79,7 +79,7 @@ ggbox <- function(data, y, notch = FALSE, fill = 'blue', col = 'black',
   }
   
   p
-
+  
 }
 
-ggbox(mtcars, y = 'mpg', horizontal = TRUE)
+ggbox(mtcars, x = 'gear', y = 'mpg', horizontal = TRUE)
