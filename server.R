@@ -82,6 +82,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_gbar2.R', local = T)
     source('logic/logic_gbox.R', local = T)
     source('logic/logic_gbox2.R', local = T)
+    source('logic/logic_ghist.R', local = T)
 
 })
 
