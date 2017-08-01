@@ -10,9 +10,9 @@ observeEvent(input$button_split_no, {
         fdata <- tibble::as_data_frame(f_data)
         colnames(fdata) <- j
         updateSelectInput(session, 'gbar2_select_x',
-              choices = names(numdata), selected = names(fdata))
+              choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, 'gbar2_select_y',
-              choices = names(numdata), selected = names(fdata))
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'gbar2_select_x', choices = '', selected = '')
           updateSelectInput(session, 'gbar2_select_y', choices = '', selected = '')
@@ -31,9 +31,9 @@ observeEvent(input$submit_part_train_per, {
         fdata <- tibble::as_data_frame(f_data)
         colnames(fdata) <- j
         updateSelectInput(session, 'gbar2_select_x',
-              choices = names(numdata), selected = names(fdata))
+              choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, 'gbar2_select_y',
-              choices = names(numdata), selected = names(fdata))
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'gbar2_select_x', choices = '', selected = '')
           updateSelectInput(session, 'gbar2_select_y', choices = '', selected = '')
