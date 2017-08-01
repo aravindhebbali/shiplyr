@@ -1,27 +1,67 @@
 source('helper/ggline.R')
 
 observeEvent(input$button_split_no, {
+        # num_data <- cbind(final_split$train[, sapply(final_split$train, is.numeric)],
+        #   final_split$train[, sapply(final_split$train, is.Date)])
+        # k <- final_split$train %>%
+        #   map(is.numeric) %>%
+        #   unlist()
+
+        # t <- final_split$train %>%
+        #   map(is.Date) %>%
+        #   unlist()
+
+        # j1 <- names(which(k == TRUE))
+        # j2 <- names(which(t == TRUE))
+
+        # if (length(j1) == 0) {
+        #   j <- j2
+        # } else if (length(j2) == 0) {
+        #   j <- j1
+        # } else {
+        #   j <- c(j1, j2)
+        # }
+        # colnames(num_data) <- j    
+        # if (is.null(dim(num_data))) {
+        #     numdata <- tibble::as_data_frame(num_data)
+        #     updateSelectInput(session, 'gline_select_x',
+        #       choices = names(numdata), selected = names(numdata))
+        #     updateSelectInput(session, 'gline_y',
+        #       choices = names(numdata), selected = names(numdata))
+        # } else if (ncol(num_data) < 1) {
+        #      updateSelectInput(session, 'gline_select_x',
+        #       choices = '', selected = '')
+        #      updateSelectInput(session, 'gline_y',
+        #       choices = '', selected = '')
+        # } else {
+        #      updateSelectInput(session, 'gline_select_x', choices = names(num_data))
+        #      updateSelectInput(session, 'gline_y', choices = names(num_data))
+        # }
+
         num_data <- cbind(final_split$train[, sapply(final_split$train, is.numeric)],
           final_split$train[, sapply(final_split$train, is.Date)])
+
         k <- final_split$train %>%
-          map(is.numeric) %>%
-          unlist()
+              map(is.numeric) %>%
+              unlist()
 
-        t <- final_split$train %>%
-          map(is.Date) %>%
-          unlist()
+            t <- final_split$train %>%
+              map(is.Date) %>%
+              unlist()
 
-        j1 <- names(which(k == TRUE))
-        j2 <- names(which(t == TRUE))
+            j1 <- names(which(k == TRUE))
+            j2 <- names(which(t == TRUE))
 
-        if (length(j1) == 0) {
-          j <- j2
-        } else if (length(j2) == 0) {
-          j <- j1
-        } else {
-          j <- c(j1, j2)
-        }
-        colnames(num_data) <- j    
+            if (length(j1) == 0) {
+              j <- j2
+            } else if (length(j2) == 0) {
+              j <- j1
+            } else {
+              j <- c(j1, j2)
+            }
+            colnames(num_data) <- j
+            
+            
         if (is.null(dim(num_data))) {
             numdata <- tibble::as_data_frame(num_data)
             updateSelectInput(session, 'gline_select_x',
@@ -37,6 +77,7 @@ observeEvent(input$button_split_no, {
              updateSelectInput(session, 'gline_select_x', choices = names(num_data))
              updateSelectInput(session, 'gline_y', choices = names(num_data))
         }
+
 
 })
 
