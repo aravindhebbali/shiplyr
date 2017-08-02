@@ -1,5 +1,5 @@
 ggbibar <- function(data, x, y, stacked = TRUE, horizontal = FALSE,
-                    yaxlimit = FALSE, y1 = NA, y2 = NA,
+                    yaxlimit = FALSE, y1 = NA, y2 = NA, theme = "Default",
                     title = NULL, xlab = NULL, ylab = NULL, sub = NULL,
                     title_col = 'black', title_vjust = 0.5,
                     title_fam = 'serif', title_face = 'plain', 
@@ -68,6 +68,19 @@ ggbibar <- function(data, x, y, stacked = TRUE, horizontal = FALSE,
     p
   }
   
+  if (theme == "Classic Dark") {
+    p <- p + theme_bw()
+  } else if (theme == "Light") {
+    p <- p + theme_light()
+  } else if (theme == "Minimal") {
+    p <- p + theme_minimal()
+  } else if (theme == "Dark") {
+    p <- p + theme_dark()
+  } else if (theme == "Classic") {
+    p <- p + theme_classic()
+  } else if (theme == "Empty") {
+    p <- p + theme_void()
+  }
   
   p
 
