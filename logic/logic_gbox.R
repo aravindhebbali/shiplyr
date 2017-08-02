@@ -203,6 +203,40 @@ output$gbox_plot_7 <- renderPlot({
     xax_vjust = input$gbox_xlab_vjust, yax_col = input$gbox_ylab_col, 
     yax_fam = input$gbox_ylab_fam, yax_face = input$gbox_ylab_font, 
     yax_size = input$gbox_ylab_size, yax_hjust = input$gbox_ylab_hjust, 
-    yax_vjust = input$gbox_ylab_vjust
+    yax_vjust = input$gbox_ylab_vjust, theme = input$gbox_theme
+  )
+})
+
+output$gbox_plot_8 <- renderPlot({
+  ggbox(data = final_split$train, y = input$gbox_select_x, 
+    horizontal = input$gbox_horiz, notch = input$gbox_notch,
+    title = input$gbox_title, sub = input$gbox_subtitle,
+    xlab = input$gbox_xlabel, ylab = input$gbox_ylabel,
+    fill = input$gbox_fill, col = input$gbox_col,
+    o_col = input$gbox_ocol, o_fill = input$gbox_ofill, 
+    o_shape = input$gbox_oshape, o_alpha = input$gbox_oalpha, 
+    o_size = input$gbox_osize, add_jitter = input$gbox_jitter,  
+    j_width = input$gbox_jwidth, j_height = input$gbox_jheight, 
+    j_fill = input$gbox_jfill, j_col = input$gbox_jcol, 
+    j_shape = input$gbox_jshape, j_size = input$gbox_jsize, 
+    j_alpha = input$gbox_jalpha, yaxlimit = TRUE, 
+    y1 = input$gboxy_range_min, y2 = input$gboxy_range_max, 
+    remove_xax = input$gbox_remx, remove_yax = input$gbox_remy,
+    add_text = input$gbox_text, xloc = input$gbox_text_x_loc, 
+    yloc = input$gbox_text_y_loc, label = input$gbox_plottext, 
+    tex_color = input$gbox_textcolor, tex_size = input$gbox_textsize,
+    title_col = input$gbox_title_col, 
+    title_fam = input$gbox_title_fam, title_face = input$gbox_title_font, 
+    title_size = input$gbox_title_size, title_hjust = input$gbox_title_hjust, 
+    title_vjust = input$gbox_title_vjust, sub_col = input$gbox_sub_col, 
+    sub_fam = input$gbox_sub_fam, sub_face = input$gbox_subtitle_font, 
+    sub_size = input$gbox_sub_size, sub_hjust = input$gbox_sub_hjust, 
+    sub_vjust = input$gbox_sub_vjust, xax_col = input$gbox_xlab_col, 
+    xax_fam = input$gbox_xlab_fam, xax_face = input$gbox_xlab_font, 
+    xax_size = input$gbox_xlab_size, xax_hjust = input$gbox_xlab_hjust, 
+    xax_vjust = input$gbox_xlab_vjust, yax_col = input$gbox_ylab_col, 
+    yax_fam = input$gbox_ylab_fam, yax_face = input$gbox_ylab_font, 
+    yax_size = input$gbox_ylab_size, yax_hjust = input$gbox_ylab_hjust, 
+    yax_vjust = input$gbox_ylab_vjust, theme = input$gbox_theme
   )
 })
