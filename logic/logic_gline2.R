@@ -217,6 +217,45 @@ output$gline2_size_ui <- renderUI({
   gline2_size_map()
 })
 
+gselectedline2 <- reactive({
+  req(input$gline2_select_x)
+  out <- final_split$train %>%
+    select(input$gline2_y)
+  out
+})
+
+yline2min <- reactive({
+  out <- gselectedline2() %>%
+    select(1) %>%
+    unlist() %>%
+    min
+
+  result <- out - ceiling(out * 0.1)
+  result
+})
+
+ylinemax2 <- reactive({
+  out <- gselectedline2() %>%
+    select(1) %>%
+    unlist() %>%
+    max
+     
+  out
+})
+
+output$ui_gline2yrange_min <- renderUI({
+  df <- final_split$train
+  if (is.null(df)) return(NULL)
+  numericInput('gline2y_range_min', 'Y Axis Min', value = yline2min())
+})
+
+output$ui_gline2yrange_max <- renderUI({
+  df <- final_split$train
+  if (is.null(df)) return(NULL)
+  numericInput('gline2y_range_max', 'Y Axis Max', value = ylinemax2())
+})
+
+
 
 output$gline2_plot_1 <- renderPlot({
   ggline2(data = final_split$train, x = input$gline2_select_x, 
@@ -233,3 +272,84 @@ output$gline2_plot_2 <- renderPlot({
     title = input$gline2_title, sub = input$gline2_subtitle,
     xlab = input$gline2_xlabel, ylab = input$gline2_ylabel)
 })
+
+output$gline2_plot_3 <- renderPlot({
+  ggline2(data = final_split$train, x = input$gline2_select_x, 
+    columns = input$gline2_y, groups = input$gline2_group,
+    cols = input$gline2_col, ltypes = input$gline2_ltype, 
+    sizes = input$gline2_size,
+    title = input$gline2_title, sub = input$gline2_subtitle,
+    xlab = input$gline2_xlabel, ylab = input$gline2_ylabel,
+    yaxlimit = TRUE, y1 = input$gline2y_range_min, y2 = input$gline2y_range_max,
+    remove_xax = input$gline2_remx, remove_yax = input$gline2_remy)
+})
+
+output$gline2_plot_4 <- renderPlot({
+  ggline2(data = final_split$train, x = input$gline2_select_x, 
+    columns = input$gline2_y, groups = input$gline2_group,
+    cols = input$gline2_col, ltypes = input$gline2_ltype, 
+    sizes = input$gline2_size,
+    title = input$gline2_title, sub = input$gline2_subtitle,
+    xlab = input$gline2_xlabel, ylab = input$gline2_ylabel,
+    yaxlimit = TRUE, y1 = input$gline2y_range_min, y2 = input$gline2y_range_max,
+    remove_xax = input$gline2_remx, remove_yax = input$gline2_remy,
+    add_text = input$gline2_text, xloc = input$gline2_text_x_loc, 
+    yloc = input$gline2_text_y_loc, label = input$gline2_plottext, 
+    tex_color = input$gline2_textcolor, tex_size = input$gline2_textsize)
+})
+
+output$gline2_plot_5 <- renderPlot({
+  ggline2(data = final_split$train, x = input$gline2_select_x, 
+    columns = input$gline2_y, groups = input$gline2_group,
+    cols = input$gline2_col, ltypes = input$gline2_ltype, 
+    sizes = input$gline2_size,
+    title = input$gline2_title, sub = input$gline2_subtitle,
+    xlab = input$gline2_xlabel, ylab = input$gline2_ylabel,
+    yaxlimit = TRUE, y1 = input$gline2y_range_min, y2 = input$gline2y_range_max,
+    remove_xax = input$gline2_remx, remove_yax = input$gline2_remy,
+    add_text = input$gline2_text, xloc = input$gline2_text_x_loc, 
+    yloc = input$gline2_text_y_loc, label = input$gline2_plottext, 
+    tex_color = input$gline2_textcolor, tex_size = input$gline2_textsize,
+    title_col = input$gline22_title_col, 
+    title_fam = input$gline2_title_fam, title_face = input$gline2_title_font, 
+    title_size = input$gline2_title_size, title_hjust = input$gline2_title_hjust, 
+    title_vjust = input$gline2_title_vjust, sub_col = input$gline2_sub_col, 
+    sub_fam = input$gline2_sub_fam, sub_face = input$gline2_subtitle_font, 
+    sub_size = input$gline2_sub_size, sub_hjust = input$gline2_sub_hjust, 
+    sub_vjust = input$gline2_sub_vjust, xax_col = input$gline2_xlab_col, 
+    xax_fam = input$gline2_xlab_fam, xax_face = input$gline2_xlab_font, 
+    xax_size = input$gline2_xlab_size, xax_hjust = input$gline2_xlab_hjust, 
+    xax_vjust = input$gline2_xlab_vjust, yax_col = input$gline2_ylab_col, 
+    yax_fam = input$gline2_ylab_fam, yax_face = input$gline2_ylab_font, 
+    yax_size = input$gline2_ylab_size, yax_hjust = input$gline2_ylab_hjust, 
+    yax_vjust = input$gline2_ylab_vjust)
+})
+
+output$gline2_plot_6 <- renderPlot({
+  ggline2(data = final_split$train, x = input$gline2_select_x, 
+    columns = input$gline2_y, groups = input$gline2_group,
+    cols = input$gline2_col, ltypes = input$gline2_ltype, 
+    sizes = input$gline2_size,
+    title = input$gline2_title, sub = input$gline2_subtitle,
+    xlab = input$gline2_xlabel, ylab = input$gline2_ylabel,
+    yaxlimit = TRUE, y1 = input$gline2y_range_min, y2 = input$gline2y_range_max,
+    remove_xax = input$gline2_remx, remove_yax = input$gline2_remy,
+    add_text = input$gline2_text, xloc = input$gline2_text_x_loc, 
+    yloc = input$gline2_text_y_loc, label = input$gline2_plottext, 
+    tex_color = input$gline2_textcolor, tex_size = input$gline2_textsize,
+    title_col = input$gline22_title_col, 
+    title_fam = input$gline2_title_fam, title_face = input$gline2_title_font, 
+    title_size = input$gline2_title_size, title_hjust = input$gline2_title_hjust, 
+    title_vjust = input$gline2_title_vjust, sub_col = input$gline2_sub_col, 
+    sub_fam = input$gline2_sub_fam, sub_face = input$gline2_subtitle_font, 
+    sub_size = input$gline2_sub_size, sub_hjust = input$gline2_sub_hjust, 
+    sub_vjust = input$gline2_sub_vjust, xax_col = input$gline2_xlab_col, 
+    xax_fam = input$gline2_xlab_fam, xax_face = input$gline2_xlab_font, 
+    xax_size = input$gline2_xlab_size, xax_hjust = input$gline2_xlab_hjust, 
+    xax_vjust = input$gline2_xlab_vjust, yax_col = input$gline2_ylab_col, 
+    yax_fam = input$gline2_ylab_fam, yax_face = input$gline2_ylab_font, 
+    yax_size = input$gline2_ylab_size, yax_hjust = input$gline2_ylab_hjust, 
+    yax_vjust = input$gline2_ylab_vjust)
+})
+
+
