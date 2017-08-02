@@ -48,13 +48,32 @@ tabPanel('Line Chart - II', value = 'tab_gline2',
 
 					tabPanel('Aesthetics',
 						fluidRow(
+							column(2,
+								br(),
+								column(12,
+									actionButton('gline2_col_yes', 'Color', width = '120px')
+								),
+								column(12,
+									br(),
+									br(),
+									actionButton('gline2_ltype_yes', 'Line Type', width = '120px')
+								),
+								column(12,
+									br(),
+									br(),
+									actionButton('gline2_size_yes', 'Size', width = '120px')
+								)
+							),
 							column(2, 
-								selectInput('gline2_col', 'Color: ',
-                              choices = "", selected = ""),
-								selectInput('gline2_ltype', 'Line Type: ',
-                              choices = "", selected = ""),
-								selectInput('gline2_size', 'Size: ',
-                              choices = "", selected = "")
+								column(12,
+									uiOutput('gline2_col_ui')
+								),
+								column(12,	
+									uiOutput('gline2_ltype_ui')
+								),
+								column(12,	
+									uiOutput('gline2_size_ui')
+								)
 							),
 							column(8,
 								plotOutput('gline2_plot_2', height = '600px')

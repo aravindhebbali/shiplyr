@@ -1,30 +1,31 @@
 source('helper/ggline2.R')
 
+
 observeEvent(input$button_split_no, {
 
-        num_data <- cbind(final_split$train[, sapply(final_split$train, is.numeric)],
-          final_split$train[, sapply(final_split$train, is.Date)])
+    num_data <- cbind.data.frame(final_split$train[, sapply(final_split$train, is.numeric)],
+                      final_split$train[, sapply(final_split$train, is.Date)])
+    
+    k <- final_split$train %>%
+      map(is.numeric) %>%
+      unlist()
 
-         k <- final_split$train %>%
-              map(is.numeric) %>%
-              unlist()
+    t <- final_split$train %>%
+      map(is.Date) %>%
+      unlist()
 
-            t <- final_split$train %>%
-              map(is.Date) %>%
-              unlist()
+    j1 <- names(which(k == TRUE))
+    j2 <- names(which(t == TRUE))
 
-            j1 <- names(which(k == TRUE))
-            j2 <- names(which(t == TRUE))
-
-            if (length(j1) == 0) {
-              j <- j2
-            } else if (length(j2) == 0) {
-              j <- j1
-            } else {
-              j <- c(j1, j2)
-            }
-            
-            
+    if (length(j1) == 0) {
+      j <- j2
+    } else if (length(j2) == 0) {
+      j <- j1
+    } else {
+      j <- c(j1, j2)
+    }
+    colnames(num_data) <- j
+    
         if (is.null(dim(num_data))) {
             numdata <- tibble::as_data_frame(num_data)
             colnames(numdata) <- j
@@ -72,29 +73,32 @@ observeEvent(input$button_split_no, {
 })
 
 observeEvent(input$submit_part_train_per, {
-        num_data <- cbind(final_split$train[, sapply(final_split$train, is.numeric)],
-          final_split$train[, sapply(final_split$train, is.Date)])
-        k <- final_split$train %>%
-          map(is.numeric) %>%
-          unlist()
+        num_data <- cbind.data.frame(final_split$train[, sapply(final_split$train, is.numeric)],
+                      final_split$train[, sapply(final_split$train, is.Date)])
+    
+    k <- final_split$train %>%
+      map(is.numeric) %>%
+      unlist()
 
-        t <- final_split$train %>%
-          map(is.Date) %>%
-          unlist()
+    t <- final_split$train %>%
+      map(is.Date) %>%
+      unlist()
 
-        j1 <- names(which(k == TRUE))
-        j2 <- names(which(t == TRUE))
+    j1 <- names(which(k == TRUE))
+    j2 <- names(which(t == TRUE))
 
-        if (length(j1) == 0) {
-          j <- j2
-        } else if (length(j2) == 0) {
-          j <- j1
-        } else {
-          j <- c(j1, j2)
-        }
-        colnames(num_data) <- j    
+    if (length(j1) == 0) {
+      j <- j2
+    } else if (length(j2) == 0) {
+      j <- j1
+    } else {
+      j <- c(j1, j2)
+    }
+    colnames(num_data) <- j
+    
         if (is.null(dim(num_data))) {
             numdata <- tibble::as_data_frame(num_data)
+            colnames(numdata) <- j
             updateSelectInput(session, 'gline2_select_x',
               choices = names(numdata), selected = names(numdata))
             updateSelectInput(session, 'gline2_y',
@@ -105,8 +109,8 @@ observeEvent(input$submit_part_train_per, {
              updateSelectInput(session, 'gline2_y',
               choices = '', selected = '')
         } else {
-             updateSelectInput(session, 'gline2_select_x', choices = names(num_data), selected = names(num_data))
-             updateSelectInput(session, 'gline2_y', choices = names(num_data), selected = names(num_data))
+             updateSelectInput(session, 'gline2_select_x', choices = names(num_data))
+             updateSelectInput(session, 'gline2_y', choices = names(num_data))
         }
 
         f_data <- final_split$train[, sapply(final_split$train, is.factor)]
@@ -135,6 +139,82 @@ observeEvent(input$submit_part_train_per, {
           updateSelectInput(session, 'gline2_ltype', choices = list('NA' = 'NA', names(f_data)), selected = 'NA')  
           updateSelectInput(session, 'gline2_size', choices = list('NA' = 'NA', names(f_data)), selected = 'NA')  
         }
+})
+
+
+gline2_col_map <- eventReactive(input$gline2_col_yes, {
+  selectInput('gline2_col', '',
+      choices = "", selected = "")
+})
+
+observeEvent(input$gline2_col_yes, {
+  f_data <- final_split$train[, sapply(final_split$train, is.factor)]
+  if (is.null(dim(f_data))) {
+    h <- final_split$train %>% map(is.factor) %>% unlist()
+    q <- names(which(h == TRUE))
+    fdata <- tibble::as_data_frame(f_data)
+    colnames(fdata) <- q
+    updateSelectInput(session, inputId = "gline2_col",
+      choices = names(fdata), selected = '')        
+  } else if (dim(f_data)[2] == 0) {
+    updateSelectInput(session, 'gline2_col', choices = '', selected = '')
+  } else {      
+    updateSelectInput(session, 'gline2_col', choices = names(f_data), selected = '')  
+  }
+})
+
+output$gline2_col_ui <- renderUI({
+  gline2_col_map()
+})
+
+gline2_ltype_map <- eventReactive(input$gline2_ltype_yes, {
+  selectInput('gline2_ltype', '',
+      choices = "", selected = "")
+})
+
+observeEvent(input$gline2_ltype_yes, {
+  f_data <- final_split$train[, sapply(final_split$train, is.factor)]
+  if (is.null(dim(f_data))) {
+    h <- final_split$train %>% map(is.factor) %>% unlist()
+    q <- names(which(h == TRUE))
+    fdata <- tibble::as_data_frame(f_data)
+    colnames(fdata) <- q
+    updateSelectInput(session, inputId = "gline2_ltype",
+      choices = names(fdata), selected = '')        
+  } else if (dim(f_data)[2] == 0) {
+    updateSelectInput(session, 'gline2_ltype', choices = '', selected = '')
+  } else {      
+    updateSelectInput(session, 'gline2_ltype', choices = names(f_data), selected = '')  
+  }
+})
+
+output$gline2_ltype_ui <- renderUI({
+  gline2_ltype_map()
+})
+
+gline2_size_map <- eventReactive(input$gline2_size_yes, {
+  selectInput('gline2_size', '',
+      choices = "", selected = "")
+})
+
+observeEvent(input$gline2_size_yes, {
+  f_data <- final_split$train[, sapply(final_split$train, is.factor)]
+  if (is.null(dim(f_data))) {
+    h <- final_split$train %>% map(is.factor) %>% unlist()
+    q <- names(which(h == TRUE))
+    fdata <- tibble::as_data_frame(f_data)
+    colnames(fdata) <- q
+    updateSelectInput(session, inputId = "gline2_size",
+      choices = names(fdata), selected = '')        
+  } else if (dim(f_data)[2] == 0) {
+    updateSelectInput(session, 'gline2_size', choices = '', selected = '')
+  } else {      
+    updateSelectInput(session, 'gline2_size', choices = names(f_data), selected = '')  
+  }
+})
+
+output$gline2_size_ui <- renderUI({
+  gline2_size_map()
 })
 
 
