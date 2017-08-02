@@ -201,9 +201,21 @@ tabPanel('Histogram', value = 'tab_ghist',
 						)
 					),
 
+					tabPanel('Theme',
+						column(2,
+							selectInput(inputId = 'ghist_theme', label = 'Theme',
+								choices = list("Classic Dark", "Default", "Light", "Minimal", 
+									"Dark", "Classic", "Empty"), selected = "Default")
+						),
+						column(2),
+						column(8, align = 'center',
+							plotOutput('ghist_plot_5', height = '600px')
+						)
+					),
+
 					tabPanel('Plot',
 						column(12, align = 'center',
-							plotOutput('ghist_plot_5', height = '600px')
+							plotOutput('ghist_plot_6', height = '600px')
 						)
 					)
 
