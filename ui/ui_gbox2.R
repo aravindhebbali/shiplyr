@@ -274,9 +274,21 @@ tabPanel('Box Plot - II', value = 'tab_gbox2',
             )
           ),
 
+          tabPanel('Theme',
+            column(2,
+              selectInput(inputId = 'gbox2_theme', label = 'Theme',
+                choices = list("Classic Dark", "Default", "Light", "Minimal", 
+                  "Dark", "Classic", "Empty"), selected = "Default")
+            ),
+            column(2),
+            column(8, align = 'center',
+              plotOutput('gbox2_plot_7', height = '600px')
+            )
+          ),
+
           tabPanel('Plot',
             column(12, align = 'center',
-              plotOutput('gbox2_plot_7', height = '600px')
+              plotOutput('gbox2_plot_8', height = '600px')
             )
           )         
                               

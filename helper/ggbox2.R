@@ -1,5 +1,5 @@
 ggbox <- function(data, x, y, notch = FALSE, fill = 'blue', col = 'black',
-                  o_col = 'red', o_fill = 'yellow', o_shape = 22,
+                  o_col = 'red', o_fill = 'yellow', o_shape = 22, theme = "Default",
                   o_alpha = 0.8, o_size = 2, add_jitter = FALSE, 
                   j_width = 0.1, j_height = 0.1, j_fill = 'blue',
                   j_col = 'black', j_shape = 22, j_size = 2, j_alpha = 0.8,
@@ -76,6 +76,20 @@ ggbox <- function(data, x, y, notch = FALSE, fill = 'blue', col = 'black',
     p <- p + annotate("text", x = xloc, y = yloc, label = label, 
                       color = tex_color, size = tex_size)
     p
+  }
+
+  if (theme == "Classic Dark") {
+    p <- p + theme_bw()
+  } else if (theme == "Light") {
+    p <- p + theme_light()
+  } else if (theme == "Minimal") {
+    p <- p + theme_minimal()
+  } else if (theme == "Dark") {
+    p <- p + theme_dark()
+  } else if (theme == "Classic") {
+    p <- p + theme_classic()
+  } else if (theme == "Empty") {
+    p <- p + theme_void()
   }
   
   p
