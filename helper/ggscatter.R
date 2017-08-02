@@ -2,7 +2,7 @@ library(ggplot2)
 
 # add text annotations
 gscatter <- function(data, x, y, aes_var = FALSE, reg_line = FALSE,
-                     reg_method = 'lm', reg_se = TRUE,
+                     reg_method = 'lm', reg_se = TRUE, theme = "Default",
                      title = NULL, xlab = NULL, ylab = NULL, sub = NULL,
                       color = 'black', shape = 1, size = 1, fill = 'black', 
                       xaxlimit = FALSE, yaxlimit = FALSE,
@@ -89,6 +89,20 @@ gscatter <- function(data, x, y, aes_var = FALSE, reg_line = FALSE,
                       color = tex_color, size = tex_size)
     p
   }
+
+  if (theme == "Classic Dark") {
+    p <- p + theme_bw()
+  } else if (theme == "Light") {
+    p <- p + theme_light()
+  } else if (theme == "Minimal") {
+    p <- p + theme_minimal()
+  } else if (theme == "Dark") {
+    p <- p + theme_dark()
+  } else if (theme == "Classic") {
+    p <- p + theme_classic()
+  } else if (theme == "Empty") {
+    p <- p + theme_void()
+  }
   
   p
 }
@@ -96,13 +110,13 @@ gscatter <- function(data, x, y, aes_var = FALSE, reg_line = FALSE,
 
 
 # test
-mtcars$cyl <- as.factor(mtcars$cyl)
-mtcars$gear <- as.factor(mtcars$gear)
-mtcars$am <- as.factor(mtcars$am)
+# mtcars$cyl <- as.factor(mtcars$cyl)
+# mtcars$gear <- as.factor(mtcars$gear)
+# mtcars$am <- as.factor(mtcars$am)
 
-gscatter(mtcars, 'disp', 'mpg', aes_var = TRUE, 
-          color = 'cyl')
+# gscatter(mtcars, 'disp', 'mpg', aes_var = TRUE, 
+#           color = 'cyl')
             
-k <- gscatter(mtcars, 'disp', 'mpg', aes_var = FALSE, 
-          color = 'red', shape = 22, size = 3, fill = 'blue',
-          reg_line = TRUE, reg_method = 'loess', reg_se = FALSE)
+# k <- gscatter(mtcars, 'disp', 'mpg', aes_var = FALSE, 
+#           color = 'red', shape = 22, size = 3, fill = 'blue',
+#           reg_line = TRUE, reg_method = 'loess', reg_se = FALSE)

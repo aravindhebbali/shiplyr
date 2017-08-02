@@ -127,7 +127,7 @@ output$ui_gyrange_max <- renderUI({
 # })
 
 output$gscatter_plot_1 <- renderPlot({
-  gscatter(data = gselected(), x = input$gscatter_select_x, 
+  gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
   	y = input$gscatter_select_y, title = input$gscatter_title, 
   	sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel)
@@ -136,14 +136,14 @@ output$gscatter_plot_1 <- renderPlot({
 output$gscatter_plot_2 <- renderPlot({
 
 	if (input$geas == 'Use Variables') {
-		gscatter(data = gselected(), x = input$gscatter_select_x, 
+		gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
   	y = input$gscatter_select_y, aes_var = TRUE, 
   	title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
     color = input$gaes_color, shape = input$gaes_shape, 
     size = input$gaes_size)
 	} else {
-		gscatter(data = gselected(), x = input$gscatter_select_x, 
+		gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
   	y = input$gscatter_select_y, aes_var = FALSE, 
   	title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -157,7 +157,7 @@ output$gscatter_plot_2 <- renderPlot({
 output$gscatter_plot_3 <- renderPlot({
 
   if (input$geas == 'Use Variables') {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = TRUE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -166,7 +166,7 @@ output$gscatter_plot_3 <- renderPlot({
     x1 = input$gx_range_min, x2 = input$gx_range_max, 
     y1 = input$gy_range_min, y2 = input$gy_range_max)
   } else {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = FALSE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -183,7 +183,7 @@ output$gscatter_plot_3 <- renderPlot({
 output$gscatter_plot_4 <- renderPlot({
 
   if (input$geas == 'Use Variables') {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = TRUE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -194,7 +194,7 @@ output$gscatter_plot_4 <- renderPlot({
     reg_line = input$gscat_line, reg_method = as.character(input$greg_type), 
     reg_se = input$greg_se)
   } else {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = FALSE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -213,7 +213,7 @@ output$gscatter_plot_4 <- renderPlot({
 output$gscatter_plot_5 <- renderPlot({
 
   if (input$geas == 'Use Variables') {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = TRUE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -227,7 +227,7 @@ output$gscatter_plot_5 <- renderPlot({
     label = input$gscatter_plottext, tex_color = input$gscatter_textcolor, 
     tex_size = input$gscatter_textsize)
   } else {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = FALSE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -249,7 +249,7 @@ output$gscatter_plot_5 <- renderPlot({
 output$gscatter_plot_6 <- renderPlot({
 
   if (input$geas == 'Use Variables') {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = TRUE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -273,7 +273,7 @@ output$gscatter_plot_6 <- renderPlot({
     yax_face = input$gscat_ylab_font, yax_size = input$gscat_ylab_size, 
     yax_hjust = input$gscat_ylab_hjust, yax_vjust = input$gscat_ylab_vjust)
   } else {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = FALSE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -305,7 +305,7 @@ output$gscatter_plot_6 <- renderPlot({
 output$gscatter_plot_7 <- renderPlot({
 
   if (input$geas == 'Use Variables') {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = TRUE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -327,9 +327,9 @@ output$gscatter_plot_7 <- renderPlot({
     xax_hjust = input$gscat_xlab_hjust, xax_vjust = input$gscat_xlab_vjust,
     yax_col = input$gscat_ylab_col, yax_fam = input$gscat_ylab_fam, 
     yax_face = input$gscat_ylab_font, yax_size = input$gscat_ylab_size, 
-    yax_hjust = input$gscat_ylab_hjust, yax_vjust = input$gscat_ylab_vjust)
+    yax_hjust = input$gscat_ylab_hjust, yax_vjust = input$gscat_ylab_vjust, theme = input$gscatter_theme)
   } else {
-    gscatter(data = gselected(), x = input$gscatter_select_x, 
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
     y = input$gscatter_select_y, aes_var = FALSE, 
     title = input$gscatter_title, sub = input$gscatter_subtitle,
     xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
@@ -352,7 +352,63 @@ output$gscatter_plot_7 <- renderPlot({
     xax_hjust = input$gscat_xlab_hjust, xax_vjust = input$gscat_xlab_vjust,
     yax_col = input$gscat_ylab_col, yax_fam = input$gscat_ylab_fam, 
     yax_face = input$gscat_ylab_font, yax_size = input$gscat_ylab_size, 
-    yax_hjust = input$gscat_ylab_hjust, yax_vjust = input$gscat_ylab_vjust)
+    yax_hjust = input$gscat_ylab_hjust, yax_vjust = input$gscat_ylab_vjust, theme = input$gscatter_theme)
+  }
+
+  
+})
+
+output$gscatter_plot_8 <- renderPlot({
+
+  if (input$geas == 'Use Variables') {
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
+    y = input$gscatter_select_y, aes_var = TRUE, 
+    title = input$gscatter_title, sub = input$gscatter_subtitle,
+    xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
+    color = input$gaes_color, shape = input$gaes_shape, 
+    size = input$gaes_size, xaxlimit = TRUE, yaxlimit = TRUE, 
+    x1 = input$gx_range_min, x2 = input$gx_range_max, 
+    y1 = input$gy_range_min, y2 = input$gy_range_max,
+    reg_line = input$gscat_line, reg_method = as.character(input$greg_type), 
+    reg_se = input$greg_se, add_text = input$gscat_text, 
+    xloc = input$gscatter_text_x_loc, yloc = input$gscatter_text_y_loc, 
+    label = input$gscatter_plottext, tex_color = input$gscatter_textcolor, 
+    tex_size = input$gscatter_textsize, title_col = input$gscat_title_col, 
+    title_fam = input$gscat_title_fam, title_face = input$gscat_title_font, 
+    title_size = input$gscat_title_size, title_hjust = input$gscat_title_hjust, title_vjust = input$gscat_title_vjust,
+    sub_col = input$gscat_sub_col, sub_fam = input$gscat_sub_fam, sub_face = input$gscat_subtitle_font, 
+    sub_size = input$gscat_sub_size, sub_hjust = input$gscat_sub_hjust, sub_vjust = input$gscat_sub_vjust,
+    xax_col = input$gscat_xlab_col, xax_fam = input$gscat_xlab_fam, 
+    xax_face = input$gscat_xlab_font, xax_size = input$gscat_xlab_size, 
+    xax_hjust = input$gscat_xlab_hjust, xax_vjust = input$gscat_xlab_vjust,
+    yax_col = input$gscat_ylab_col, yax_fam = input$gscat_ylab_fam, 
+    yax_face = input$gscat_ylab_font, yax_size = input$gscat_ylab_size, 
+    yax_hjust = input$gscat_ylab_hjust, yax_vjust = input$gscat_ylab_vjust, theme = input$gscatter_theme)
+  } else {
+    gscatter(data = gselectedscat(), x = input$gscatter_select_x, 
+    y = input$gscatter_select_y, aes_var = FALSE, 
+    title = input$gscatter_title, sub = input$gscatter_subtitle,
+    xlab = input$gscatter_xlabel, ylab = input$gscatter_ylabel,
+    color = input$gscat_color, shape = input$gscat_shape, 
+    size = input$gscat_size, fill = input$gscat_fill,
+    xaxlimit = TRUE, yaxlimit = TRUE, 
+    x1 = input$gx_range_min, x2 = input$gx_range_max, 
+    y1 = input$gy_range_min, y2 = input$gy_range_max,
+    reg_line = input$gscat_line, reg_method = as.character(input$greg_type), 
+    reg_se = input$greg_se, add_text = input$gscat_text, 
+    xloc = input$gscatter_text_x_loc, yloc = input$gscatter_text_y_loc, 
+    label = input$gscatter_plottext, tex_color = input$gscatter_textcolor, 
+    tex_size = input$gscatter_textsize, title_col = input$gscat_title_col, 
+    title_fam = input$gscat_title_fam, title_face = input$gscat_title_font, 
+    title_size = input$gscat_title_size, title_hjust = input$gscat_title_hjust, title_vjust = input$gscat_title_vjust,
+    sub_col = input$gscat_sub_col, sub_fam = input$gscat_sub_fam, sub_face = input$gscat_subtitle_font, 
+    sub_size = input$gscat_sub_size, sub_hjust = input$gscat_sub_hjust, sub_vjust = input$gscat_sub_vjust,
+    xax_col = input$gscat_xlab_col, xax_fam = input$gscat_xlab_fam, 
+    xax_face = input$gscat_xlab_font, xax_size = input$gscat_xlab_size, 
+    xax_hjust = input$gscat_xlab_hjust, xax_vjust = input$gscat_xlab_vjust,
+    yax_col = input$gscat_ylab_col, yax_fam = input$gscat_ylab_fam, 
+    yax_face = input$gscat_ylab_font, yax_size = input$gscat_ylab_size, 
+    yax_hjust = input$gscat_ylab_hjust, yax_vjust = input$gscat_ylab_vjust, theme = input$gscatter_theme)
   }
 
   
