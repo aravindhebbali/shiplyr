@@ -245,7 +245,32 @@ output$gline_plot_6 <- renderPlot({
     xax_vjust = input$gline_xlab_vjust, yax_col = input$gline_ylab_col, 
     yax_fam = input$gline_ylab_fam, yax_face = input$gline_ylab_font, 
     yax_size = input$gline_ylab_size, yax_hjust = input$gline_ylab_hjust, 
-    yax_vjust = input$gline_ylab_vjust)
+    yax_vjust = input$gline_ylab_vjust, theme = input$gline_theme)
+})
+
+output$gline_plot_7 <- renderPlot({
+  ggline(data = final_split$train, x = input$gline_select_x, 
+    columns = input$gline_y,
+    title = input$gbox_title, sub = input$gbox_subtitle,
+    xlab = input$gbox_xlabel, ylab = input$gbox_ylabel,
+    yaxlimit = TRUE, y1 = input$gliney_range_min, y2 = input$gliney_range_max,
+    remove_xax = input$gline_remx, remove_yax = input$gline_remy,
+    add_text = input$gline_text, xloc = input$gline_text_x_loc, 
+    yloc = input$gline_text_y_loc, label = input$gline_plottext, 
+    tex_color = input$gline_textcolor, tex_size = input$gline_textsize,
+    title_col = input$gline_title_col, 
+    title_fam = input$gline_title_fam, title_face = input$gline_title_font, 
+    title_size = input$gline_title_size, title_hjust = input$gline_title_hjust, 
+    title_vjust = input$gline_title_vjust, sub_col = input$gline_sub_col, 
+    sub_fam = input$gline_sub_fam, sub_face = input$gline_subtitle_font, 
+    sub_size = input$gline_sub_size, sub_hjust = input$gline_sub_hjust, 
+    sub_vjust = input$gline_sub_vjust, xax_col = input$gline_xlab_col, 
+    xax_fam = input$gline_xlab_fam, xax_face = input$gline_xlab_font, 
+    xax_size = input$gline_xlab_size, xax_hjust = input$gline_xlab_hjust, 
+    xax_vjust = input$gline_xlab_vjust, yax_col = input$gline_ylab_col, 
+    yax_fam = input$gline_ylab_fam, yax_face = input$gline_ylab_font, 
+    yax_size = input$gline_ylab_size, yax_hjust = input$gline_ylab_hjust, 
+    yax_vjust = input$gline_ylab_vjust, theme = input$gline_theme)
 })
 
 

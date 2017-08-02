@@ -5,7 +5,7 @@
 # p
 
 
-ggline <- function(data, x, columns, cols = 'black', 
+ggline <- function(data, x, columns, cols = 'black', theme = "Default",
                    alphas = 1, ltypes = 1, sizes = 1,
                    yaxlimit = FALSE, y1 = NA, y2 = NA, 
                    title = NULL, xlab = NULL, ylab = NULL, sub = NULL,
@@ -101,6 +101,20 @@ ggline <- function(data, x, columns, cols = 'black',
     p <- p + annotate("text", x = xloc, y = yloc, label = label, 
                       color = tex_color, size = tex_size)
     p
+  }
+
+  if (theme == "Classic Dark") {
+    p <- p + theme_bw()
+  } else if (theme == "Light") {
+    p <- p + theme_light()
+  } else if (theme == "Minimal") {
+    p <- p + theme_minimal()
+  } else if (theme == "Dark") {
+    p <- p + theme_dark()
+  } else if (theme == "Classic") {
+    p <- p + theme_classic()
+  } else if (theme == "Empty") {
+    p <- p + theme_void()
   }
   
   p
