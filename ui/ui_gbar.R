@@ -207,9 +207,21 @@ tabPanel('Bar Plot - I', value = 'tab_gbar',
 						)
 					),
 
+					tabPanel('Theme',
+						column(2,
+							selectInput(inputId = 'gbar_theme', label = 'Theme',
+								choices = list("Classic Dark", "Default", "Light", "Minimal", 
+									"Dark", "Classic", "Empty"), selected = "Default")
+						),
+						column(2),
+						column(8, align = 'center',
+							plotOutput('gbar_plot_5', height = '600px')
+						)
+					),
+
 					tabPanel('Plot',
 						column(12, align = 'center',
-							plotOutput('gbar_plot_5', height = '600px')
+							plotOutput('gbar_plot_6', height = '600px')
 						)
 					)
 

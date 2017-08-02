@@ -3,7 +3,7 @@ library(ggplot2)
 # mtcars$cyl <- as.factor(mtcars$cyl)
 # mtcars$gear <- as.factor(mtcars$gear)
 
-ggbar1 <- function(data, column, bar_col = 'blue', bor_col = 'black',
+ggbar1 <- function(data, column, bar_col = 'blue', bor_col = 'black', theme = "Default",
                    yaxlimit = FALSE, y1 = NA, y2 = NA, horizontal = FALSE,
                    title = NULL, xlab = NULL, ylab = NULL, sub = NULL,
                    title_col = 'black', title_vjust = 0.5,
@@ -69,6 +69,20 @@ ggbar1 <- function(data, column, bar_col = 'blue', bor_col = 'black',
                       color = tex_color, size = tex_size)
     p
   }
+
+  if (theme == "Classic Dark") {
+    p <- p + theme_bw()
+  } else if (theme == "Light") {
+    p <- p + theme_light()
+  } else if (theme == "Minimal") {
+    p <- p + theme_minimal()
+  } else if (theme == "Dark") {
+    p <- p + theme_dark()
+  } else if (theme == "Classic") {
+    p <- p + theme_classic()
+  } else if (theme == "Empty") {
+    p <- p + theme_void()
+  } 
   
   p
   
