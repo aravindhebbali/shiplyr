@@ -1,5 +1,5 @@
 ggline2 <- function(data, x, columns, groups, cols = NULL, 
-                   ltypes = NULL, sizes = NULL,
+                   ltypes = NULL, sizes = NULL, theme = "Default",
                    yaxlimit = FALSE, y1 = NA, y2 = NA, 
                    title = NULL, xlab = NULL, ylab = NULL, sub = NULL,
                    title_col = 'black', title_vjust = 0.5,
@@ -74,6 +74,20 @@ ggline2 <- function(data, x, columns, groups, cols = NULL,
     p <- p + annotate("text", x = xloc, y = yloc, label = label, 
                       color = tex_color, size = tex_size)
     p
+  }
+
+  if (theme == "Classic Dark") {
+    p <- p + theme_bw()
+  } else if (theme == "Light") {
+    p <- p + theme_light()
+  } else if (theme == "Minimal") {
+    p <- p + theme_minimal()
+  } else if (theme == "Dark") {
+    p <- p + theme_dark()
+  } else if (theme == "Classic") {
+    p <- p + theme_classic()
+  } else if (theme == "Empty") {
+    p <- p + theme_void()
   }
   
   p

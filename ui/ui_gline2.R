@@ -236,9 +236,21 @@ tabPanel('Line Chart - II', value = 'tab_gline2',
 						)
 					),
 
+					tabPanel('Theme',
+						column(2,
+							selectInput(inputId = 'gline2_theme', label = 'Theme',
+								choices = list("Classic Dark", "Default", "Light", "Minimal", 
+									"Dark", "Classic", "Empty"), selected = "Default")
+						),
+						column(2),
+						column(8, align = 'center',
+							plotOutput('gline2_plot_6', height = '600px')
+						)
+					),
+
 					tabPanel('Plot',
 						column(12, align = 'center',
-							plotOutput('gline2_plot_6', height = '600px')
+							plotOutput('gline2_plot_7', height = '600px')
 						)
 					)
 				)
