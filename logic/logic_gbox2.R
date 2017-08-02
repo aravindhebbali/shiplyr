@@ -62,7 +62,7 @@ observeEvent(input$button_split_no, {
         }
     })
 
-gselected <- reactive({
+gselectedbox2 <- reactive({
   req(input$gbox2_select_x)
   out <- final_split$train %>%
     select(input$gbox2_select_x, input$gbox2_select_y)
@@ -70,7 +70,7 @@ gselected <- reactive({
 })
 
 ybox2max <- reactive({
-  out <- gselected() %>%
+  out <- gselectedbox2() %>%
   select(2) %>%
   max 
 

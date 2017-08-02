@@ -91,7 +91,7 @@ observeEvent(input$submit_part_train_per, {
 })
 
 # selected data
-gselected <- reactive({
+gselectedscat <- reactive({
   req(input$gscatter_select_x)
 	out <- final_split$train[, c(input$gscatter_select_x, input$gscatter_select_y,
     input$gaes_color, input$gaes_shape, input$gaes_size)]
@@ -100,25 +100,25 @@ gselected <- reactive({
 output$ui_gxrange_min <- renderUI({
   df <- final_split$train
   if (is.null(df)) return(NULL)
-  numericInput('gx_range_min', 'X Axis Min', value = min(as.numeric(gselected()[[1]])))
+  numericInput('gx_range_min', 'X Axis Min', value = min(as.numeric(gselectedscat()[[1]])))
 })
 
 output$ui_gxrange_max <- renderUI({
   df <- final_split$train
   if (is.null(df)) return(NULL)
-  numericInput('gx_range_max', 'X Axis Max', value = max(as.numeric(gselected()[[1]])))
+  numericInput('gx_range_max', 'X Axis Max', value = max(as.numeric(gselectedscat()[[1]])))
 })
 
 output$ui_gyrange_min <- renderUI({
   df <- final_split$train
   if (is.null(df)) return(NULL)
-  numericInput('gy_range_min', 'Y Axis Min', value = min(as.numeric(gselected()[[2]])))
+  numericInput('gy_range_min', 'Y Axis Min', value = min(as.numeric(gselectedscat()[[2]])))
 })
 
 output$ui_gyrange_max <- renderUI({
   df <- final_split$train
   if (is.null(df)) return(NULL)
-  numericInput('gy_range_max', 'Y Axis Max', value = max(as.numeric(gselected()[[2]])))
+  numericInput('gy_range_max', 'Y Axis Max', value = max(as.numeric(gselectedscat()[[2]])))
 })
 
 # gselected_y <- reactive({

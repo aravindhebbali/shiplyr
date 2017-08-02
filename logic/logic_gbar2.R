@@ -44,7 +44,7 @@ observeEvent(input$submit_part_train_per, {
 })
 
 
-gselected <- reactive({
+gselectedbar2 <- reactive({
   req(input$gbar_select_x)
   out <- final_split$train %>%
     select(input$gbar2_select_x, input$gbar2_select_y)
@@ -52,7 +52,7 @@ gselected <- reactive({
 })
 
 ybar2max <- reactive({
-  out <- gselected() %>%
+  out <- gselectedbar2() %>%
   select(1, 2) %>%
   table() %>%
   max

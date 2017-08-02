@@ -36,7 +36,7 @@ observeEvent(input$submit_part_train_per, {
 })
 
 
-gselected <- reactive({
+gselectedbox <- reactive({
   req(input$gbox_select_x)
   out <- final_split$train %>%
     select(input$gbox_select_x)
@@ -44,7 +44,7 @@ gselected <- reactive({
 })
 
 yboxmax <- reactive({
-  out <- gselected() %>%
+  out <- gselectedbox() %>%
   select(1) %>%
   max 
 

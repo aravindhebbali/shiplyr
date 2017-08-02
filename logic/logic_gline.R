@@ -119,7 +119,7 @@ observeEvent(input$submit_part_train_per, {
 })
 
 
-gselected <- reactive({
+gselectedline <- reactive({
   req(input$gline_select_x)
   out <- final_split$train %>%
     select(input$gline_select_x, input$gline_y)
@@ -127,7 +127,7 @@ gselected <- reactive({
 })
 
 ylinemax <- reactive({
-  out <- gselected() %>%
+  out <- gselectedline() %>%
     select(-1) %>%
     unlist() %>%
     max 
