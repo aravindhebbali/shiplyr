@@ -4,6 +4,7 @@ tabPanel('EDA', value = 'tab_eda', icon = icon('stats', lib = 'glyphicon'),
         well = FALSE,
         widths = c(2, 10),
         
+        source('ui/ui_eda_home.R', local = TRUE)[[1]],
         source('ui/ui_summary.R', local = TRUE)[[1]],
         source('ui/ui_freq_qual.R', local = TRUE)[[1]],
         source('ui/ui_freq_quant.R', local = TRUE)[[1]],

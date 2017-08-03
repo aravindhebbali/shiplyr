@@ -106,7 +106,14 @@ eda_menu <- eventReactive(input$click_descriptive, {
 
 
 output$eda_options <- renderUI({
-
 	eda_menu()
+})
 
+observeEvent(input$click_descriptive, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_eda')
+	updateNavlistPanel(session, 'navlist_eda', 'tab_eda_home')
+})
+
+observeEvent(input$click_visualize, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_viz_lib')
 })
