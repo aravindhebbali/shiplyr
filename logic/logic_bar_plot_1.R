@@ -1,4 +1,5 @@
 source('helper/barly1.R')
+source('helper/bobar.R')
 
 observeEvent(input$button_split_no, {
 
@@ -11,10 +12,14 @@ observeEvent(input$button_split_no, {
         colnames(fdata) <- j
         updateSelectInput(session, 'barly1_select_x',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'bobar1_select_x',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'barly1_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'bobar1_select_x', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'barly1_select_x', choices = names(f_data))
+          updateSelectInput(session, 'bobar1_select_x', choices = names(f_data))
         }
 })
 
@@ -29,10 +34,14 @@ observeEvent(input$submit_part_train_per, {
         colnames(fdata) <- j
         updateSelectInput(session, 'barly1_select_x',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'bobar1_select_x',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'barly1_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'bobar1_select_x', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'barly1_select_x', choices = names(f_data))
+          updateSelectInput(session, 'bobar1_select_x', choices = names(f_data))
         }
 })
 
@@ -41,4 +50,10 @@ output$barly1_plot_1 <- renderPlotly({
   barly1(data = final_split$train, x_data = input$barly1_select_x, 
     title = input$barly1_title, 
     x_title = input$barly1_xlabel, y_title = input$barly1_ylabel)
+})
+
+output$bobar1_plot_1 <- renderRbokeh({
+  bobar(data = final_split$train, x_data = input$bobar1_select_x, 
+    fig_title = input$bobar1_title, 
+    x_lab = input$bobar1_xlabel, y_lab = input$bobar1_ylabel)
 })

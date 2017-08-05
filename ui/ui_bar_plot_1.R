@@ -38,7 +38,31 @@ tabPanel('Bar Plot - I', value = 'tab_bar_plot_1',
                 plotlyOutput('barly1_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('rbokeh',
+
+						fluidRow(
+							column(2,
+								selectInput('bobar1_select_x', 'Variable: ',
+                              choices = "", selected = ""),
+								textInput(inputId = "bobar1_xlabel", label = "X Axes Label: ",
+                  value = "label")
+							),
+
+							column(2,
+								textInput(inputId = "bobar1_title", label = "Title: ",
+									value = "title"),
+                textInput(inputId = "bobar1_ylabel", label = "Y Axes Label: ",
+                  value = "label")
+							),
+
+							column(8, align = 'center',
+                rbokehOutput('bobar1_plot_1', height = '600px')
+              )
+						)
 					)
+
 				)
 			)
 		)
