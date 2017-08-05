@@ -90,7 +90,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_gpie.R', local = T)
     source('logic/logic_gline.R', local = T)
     source('logic/logic_gline2.R', local = T)
-    source('logic/logic_barly1.R', local = T)
+    source('logic/logic_plotly.R', local = T)
 
 })
 
