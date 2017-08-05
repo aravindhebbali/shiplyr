@@ -96,7 +96,7 @@ shinyServer(function(input, output, session) {
     source('logic/logic_box_plot_2.R', local = T)
     source('logic/logic_scatter_prh.R', local = T)
     source('logic/logic_line_prh.R', local = T)
-
+    source('logic/logic_hist_prh.R', local = T)
 })
 
 
