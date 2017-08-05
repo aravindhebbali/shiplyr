@@ -1,20 +1,17 @@
-tabPanel('others', value = 'tab_others',
+tabPanel('Others', value = 'tab_others',
 
 	navlistPanel(id = 'navlist_others',
     well = FALSE,
     widths = c(2, 10),
 
-    source('ui/ui_plotly.R', local = TRUE)[[1]]
-    # source('ui/ui_rbokeh.R', local = TRUE)[[1]],
-    # source('ui/ui_highcharts.R', local = TRUE)[[1]]
- #    source('ui/ui_gbar2.R', local = TRUE)[[1]],
- #    source('ui/ui_gbox.R', local = TRUE)[[1]],
- #    source('ui/ui_gbox2.R', local = TRUE)[[1]],
- #    source('ui/ui_ghist.R', local = TRUE)[[1]],
-	# source('ui/ui_gscatter.R', local = TRUE)[[1]],
- #    source('ui/ui_gpie.R', local = TRUE)[[1]],
- #    source('ui/ui_gline.R', local = TRUE)[[1]],
- #    source('ui/ui_gline2.R', local = TRUE)[[1]]
-
+    source('ui/ui_bar_plot_1.R', local = TRUE)[[1]]
+    # source('ui/ui_bar_plot_2.R', local = TRUE)[[1]],
+    # source('ui/ui_box_plot_1.R', local = TRUE)[[1]],
+    # source('ui/ui_box_plot_2.R', local = TRUE)[[1]],
+    # source('ui/ui_hist_prh.R', local = TRUE)[[1]],
+    # source('ui/ui_scatter_prh.R', local = TRUE)[[1]],
+    # source('ui/ui_line_prh.R', local = TRUE)[[1]],
+    # source('ui/ui_pie_prh.R', local = TRUE)[[1]]
+    
   )
 )
