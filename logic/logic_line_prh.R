@@ -1,5 +1,6 @@
 source('helper/linely.R')
 source('helper/boline.R')
+source('helper/highline.R')
 
 observeEvent(input$button_split_no, {
         num_data <- final_split$train[, sapply(final_split$train, is.numeric)]
@@ -12,18 +13,27 @@ observeEvent(input$button_split_no, {
               choices = names(numdata), selected = names(numdata))
             updateSelectInput(session, 'boline_select_x',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hiline_select_x',
+              choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hiline_select_y',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
              updateSelectInput(session, 'linely_select_x', choices = '', selected = '')
              updateSelectInput(session, 'boline_select_x', choices = '', selected = '')
+             updateSelectInput(session, 'hiline_select_x', choices = '', selected = '')
+             updateSelectInput(session, 'hiline_select_y', choices = '', selected = '')
         } else {
-             updateSelectInput(session, 'linely_select_x', choices = names(num_data))
-             updateSelectInput(session, 'boline_select_x', choices = names(num_data))
+             updateSelectInput(session, 'linely_select_x', choices = names(num_data), selected = names(num_data))
+             updateSelectInput(session, 'boline_select_x', choices = names(num_data), selected = names(num_data))
+             updateSelectInput(session, 'hiline_select_x', choices = names(num_data), selected = names(num_data))
+             updateSelectInput(session, 'hiline_select_y', choices = names(num_data), selected = names(num_data))
         }
 
 })
 
 observeEvent(input$submit_part_train_per, {
-        num_data <- final_split$train[, sapply(final_split$train, is.numeric)]
+        
+  num_data <- final_split$train[, sapply(final_split$train, is.numeric)]
         if (is.null(dim(num_data))) {
             k <- final_split$train %>% map(is.numeric) %>% unlist()
             j <- names(which(k == TRUE))
@@ -33,13 +43,22 @@ observeEvent(input$submit_part_train_per, {
               choices = names(numdata), selected = names(numdata))
             updateSelectInput(session, 'boline_select_x',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hiline_select_x',
+              choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hiline_select_y',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
              updateSelectInput(session, 'linely_select_x', choices = '', selected = '')
              updateSelectInput(session, 'boline_select_x', choices = '', selected = '')
+             updateSelectInput(session, 'hiline_select_x', choices = '', selected = '')
+             updateSelectInput(session, 'hiline_select_y', choices = '', selected = '')
         } else {
-             updateSelectInput(session, 'linely_select_x', choices = names(num_data))
-             updateSelectInput(session, 'boline_select_x', choices = names(num_data))
+             updateSelectInput(session, 'linely_select_x', choices = names(num_data), selected = names(num_data))
+             updateSelectInput(session, 'boline_select_x', choices = names(num_data), selected = names(num_data))
+             updateSelectInput(session, 'hiline_select_x', choices = names(num_data), selected = names(num_data))
+             updateSelectInput(session, 'hiline_select_y', choices = names(num_data), selected = names(num_data))
         }
+
 })
 
 
@@ -53,4 +72,9 @@ output$boline_plot_1 <- renderRbokeh({
   boline(data = final_split$train, x_data = input$boline_select_x, 
     fig_title = input$boline_title, x_lab = input$boline_xlabel,
     y_lab = input$boline_ylabel)
+})
+
+output$hiline_plot_1 <- renderHighchart({
+  highline(data = final_split$train, x = input$hiline_select_x, 
+    columns = input$hiline_select_y, add_labels = input$hiline_labels)
 })

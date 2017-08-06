@@ -61,6 +61,34 @@ tabPanel('Line Chart', value = 'tab_line_prh',
                 rbokehOutput('boline_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('highcharts',
+
+						fluidRow(
+							column(2,
+								selectInput('hiline_select_x', 'Variable 1: ',
+                              choices = "", selected = ""),
+								selectInput('hiline_labels', 'Labels',
+                  choices = c("TRUE" = TRUE, "FALSE" = FALSE),
+                  selected = "FALSE",  width = '150px'),
+								textInput(inputId = "hiline_xlabel", label = "X Axes Label: ",
+                  value = "label")
+							),
+
+							column(2,
+								selectInput('hiline_select_y', 'Variable 1: ', selectize = TRUE, 
+                              multiple = TRUE, choices = "", selected = ""),
+								textInput(inputId = "hiline_title", label = "Title: ",
+									value = "title"),
+                textInput(inputId = "hiline_ylabel", label = "Y Axes Label: ",
+                  value = "label")
+							),
+
+							column(8, align = 'center',
+                highchartOutput('hiline_plot_1', height = '600px')
+              )
+						)
 					)
 				)
 			)
