@@ -65,6 +65,37 @@ tabPanel('Bar Plot - II', value = 'tab_bar_plot_2',
                 rbokehOutput('bobar2_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('highcharts',
+
+						fluidRow(
+							column(2,
+								selectInput('hibar2_select_x', 'Variable 1: ',
+                              choices = "", selected = ""),
+								selectInput('hibar2_horiz', 'Horizontal',
+									choices = c("TRUE" = TRUE, "FALSE" = FALSE),
+									selected = "FALSE",  width = '150px')
+								# textInput(inputId = "hibar2_xlabel", label = "X Axes Label: ",
+        #           value = "label"),
+								# textInput(inputId = "hibar2_title", label = "Title: ",
+								# 	value = "title")
+							),
+
+							column(2,
+								selectInput('hibar2_select_y', 'Variable 2: ',
+                              choices = "", selected = ""),
+								selectInput('hibar2_stack', 'Stacked',
+									choices = c("TRUE" = TRUE, "FALSE" = FALSE),
+									selected = "FALSE",  width = '150px')
+                # textInput(inputId = "hibar2_ylabel", label = "Y Axes Label: ",
+                #   value = "label")
+							),
+
+							column(8, align = 'center',
+                highchartOutput('hibar2_plot_1', height = '600px')
+              )
+						)
 					)
 				)
 			)
