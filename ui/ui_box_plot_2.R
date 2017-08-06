@@ -65,6 +65,31 @@ tabPanel('Box Plot - II', value = 'tab_box_plot_2',
                 plotlyOutput('bobox2_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('highcharts',
+
+						fluidRow(
+							column(2,
+								selectInput('hibox2_select_x', 'Variable 1: ',
+                              choices = "", selected = ""),
+								textInput(inputId = "hibox2_xlabel", label = "X Axes Label: ",
+                  value = "label"),
+								textInput(inputId = "hibox2_title", label = "Title: ",
+									value = "title")
+							),
+
+							column(2,
+								selectInput('hibox2_select_y', 'Variable 2: ',
+                              choices = "", selected = ""),
+                textInput(inputId = "hibox2_ylabel", label = "Y Axes Label: ",
+                  value = "label")
+							),
+
+							column(8, align = 'center',
+                highchartOutput('hibox2_plot_1', height = '600px')
+              )
+						)
 					)
 
 				)

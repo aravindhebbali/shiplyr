@@ -1,5 +1,6 @@
 source('helper/boxly2.R')
 source('helper/bobox2.R')
+source('helper/hibox2.R')
 
 observeEvent(input$button_split_no, {
         num_data <- final_split$train[, sapply(final_split$train, is.numeric)]
@@ -12,12 +13,16 @@ observeEvent(input$button_split_no, {
               choices = names(numdata), selected = names(numdata))
             updateSelectInput(session, 'bobox2_select_y',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hibox2_select_y',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
              updateSelectInput(session, 'boxly2_select_y', choices = '', selected = '')
              updateSelectInput(session, 'bobox2_select_y', choices = '', selected = '')
+             updateSelectInput(session, 'hibox2_select_y', choices = '', selected = '')
         } else {
              updateSelectInput(session, 'boxly2_select_y', choices = names(num_data))
              updateSelectInput(session, 'bobox2_select_y', choices = names(num_data))
+             updateSelectInput(session, 'hibox2_select_y', choices = names(num_data))
         }
 
         f_data <- final_split$train[, sapply(final_split$train, is.factor)]
@@ -31,12 +36,16 @@ observeEvent(input$button_split_no, {
               choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, 'bobox2_select_x',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'hibox2_select_x',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'boxly2_select_x', choices = '', selected = '')
           updateSelectInput(session, 'bobox2_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'hibox2_select_x', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'boxly2_select_x', choices = names(f_data))
           updateSelectInput(session, 'bobox2_select_x', choices = names(f_data))
+          updateSelectInput(session, 'hibox2_select_x', choices = names(f_data))
         }
 
 })
@@ -53,12 +62,16 @@ observeEvent(input$submit_part_train_per, {
               choices = names(numdata), selected = names(numdata))
             updateSelectInput(session, 'bobox2_select_y',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hibox2_select_y',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
              updateSelectInput(session, 'boxly2_select_y', choices = '', selected = '')
              updateSelectInput(session, 'bobox2_select_y', choices = '', selected = '')
+             updateSelectInput(session, 'hibox2_select_y', choices = '', selected = '')
         } else {
              updateSelectInput(session, 'boxly2_select_y', choices = names(num_data))
              updateSelectInput(session, 'bobox2_select_y', choices = names(num_data))
+             updateSelectInput(session, 'hibox2_select_y', choices = names(num_data))
         }
 
         f_data <- final_split$train[, sapply(final_split$train, is.factor)]
@@ -72,12 +85,16 @@ observeEvent(input$submit_part_train_per, {
               choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, 'bobox2_select_x',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'hibox2_select_x',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'boxly2_select_x', choices = '', selected = '')
           updateSelectInput(session, 'bobox2_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'hibox2_select_x', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'boxly2_select_x', choices = names(f_data))
           updateSelectInput(session, 'bobox2_select_x', choices = names(f_data))
+          updateSelectInput(session, 'hibox2_select_x', choices = names(f_data))
         }
 })
 
@@ -93,4 +110,10 @@ output$bobox2_plot_1 <- renderRbokeh({
   bobox2(data = final_split$train, y_data = input$bobox2_select_y, 
     x_data = input$bobox2_select_x, fig_title = input$bobox2_title, 
     x_lab = input$bobox2_ylabel, y_lab = input$bobox2_ylabel)
+})
+
+output$hibox2_plot_1 <- renderHighchart({
+  highbox(data = final_split$train, y = input$hibox2_select_y, 
+    x = input$hibox2_select_x, title = input$hibox2_title, 
+    xax_title = input$hibox2_ylabel, yax_title = input$hibox2_ylabel)
 })
