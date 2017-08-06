@@ -38,6 +38,29 @@ tabPanel('Line Chart', value = 'tab_line_prh',
                 plotlyOutput('linely_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('rbokeh',
+
+						fluidRow(
+							column(2,
+								selectInput('boline_select_x', 'Variable 1: ',
+                              choices = "", selected = ""),
+								textInput(inputId = "boline_xlabel", label = "X Axes Label: ",
+                  value = "label")
+							),
+
+							column(2,
+								textInput(inputId = "boline_title", label = "Title: ",
+									value = "title"),
+                textInput(inputId = "boline_ylabel", label = "Y Axes Label: ",
+                  value = "label")
+							),
+
+							column(8, align = 'center',
+                rbokehOutput('boline_plot_1', height = '600px')
+              )
+						)
 					)
 				)
 			)
