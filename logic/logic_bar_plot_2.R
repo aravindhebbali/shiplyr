@@ -1,4 +1,5 @@
 source('helper/barly2.R')
+source('helper/bobar2.R')
 
 observeEvent(input$button_split_no, {
 
@@ -13,12 +14,20 @@ observeEvent(input$button_split_no, {
               choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, 'barly2_select_y',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'bobar2_select_x',
+              choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'bobar2_select_y',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'barly2_select_x', choices = '', selected = '')
           updateSelectInput(session, 'barly2_select_y', choices = '', selected = '')
+          updateSelectInput(session, 'bobar2_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'bobar2_select_y', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'barly2_select_x', choices = names(f_data))
           updateSelectInput(session, 'barly2_select_y', choices = names(f_data))
+          updateSelectInput(session, 'bobar2_select_x', choices = names(f_data))
+          updateSelectInput(session, 'bobar2_select_y', choices = names(f_data))
         }
 })
 
@@ -35,12 +44,20 @@ observeEvent(input$submit_part_train_per, {
               choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, 'barly2_select_y',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'bobar2_select_x',
+              choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'bobar2_select_y',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'barly2_select_x', choices = '', selected = '')
           updateSelectInput(session, 'barly2_select_y', choices = '', selected = '')
+          updateSelectInput(session, 'bobar2_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'bobar2_select_y', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'barly2_select_x', choices = names(f_data))
           updateSelectInput(session, 'barly2_select_y', choices = names(f_data))
+          updateSelectInput(session, 'bobar2_select_x', choices = names(f_data))
+          updateSelectInput(session, 'bobar2_select_y', choices = names(f_data))
         }
 })
 
@@ -49,4 +66,10 @@ output$barly2_plot_1 <- renderPlotly({
   barly2(data = final_split$train, x = input$barly2_select_x, 
     y = input$barly2_select_y, title = input$barly2_title, 
     x_title = input$barly2_xlabel, y_title = input$barly2_ylabel)
+})
+
+output$bobar2_plot_1 <- renderRbokeh({
+  bobar2(data = final_split$train, var_1 = input$bobar2_select_x, 
+    var_2 = input$bobar2_select_y, fig_title = input$bobar2_title, 
+    x_lab = input$bobar2_xlabel, y_lab = input$bobar2_ylabel)
 })
