@@ -1,5 +1,6 @@
 source('helper/barly1.R')
 source('helper/bobar.R')
+source('helper/unibar.R')
 
 observeEvent(input$button_split_no, {
 
@@ -14,12 +15,16 @@ observeEvent(input$button_split_no, {
               choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, 'bobar1_select_x',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'hibar1_select_x',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'barly1_select_x', choices = '', selected = '')
           updateSelectInput(session, 'bobar1_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'hibar1_select_x', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'barly1_select_x', choices = names(f_data))
           updateSelectInput(session, 'bobar1_select_x', choices = names(f_data))
+          updateSelectInput(session, 'hibar1_select_x', choices = names(f_data))
         }
 })
 
@@ -36,12 +41,16 @@ observeEvent(input$submit_part_train_per, {
               choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, 'bobar1_select_x',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'hibar1_select_x',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'barly1_select_x', choices = '', selected = '')
           updateSelectInput(session, 'bobar1_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'hibar1_select_x', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'barly1_select_x', choices = names(f_data))
           updateSelectInput(session, 'bobar1_select_x', choices = names(f_data))
+          updateSelectInput(session, 'hibar1_select_x', choices = names(f_data))
         }
 })
 
@@ -56,4 +65,9 @@ output$bobar1_plot_1 <- renderRbokeh({
   bobar(data = final_split$train, x_data = input$bobar1_select_x, 
     fig_title = input$bobar1_title, 
     x_lab = input$bobar1_xlabel, y_lab = input$bobar1_ylabel)
+})
+
+output$hibar1_plot_1 <- renderHighchart({
+  highbar(data = final_split$train, column = input$hibar1_select_x, 
+    title = input$hibar1_title, name = input$hibar1_xlabel)
 })
