@@ -38,6 +38,29 @@ tabPanel('Pie Chart', value = 'tab_pie_prh',
                 plotlyOutput('piely_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('highcharts',
+
+						fluidRow(
+							column(2,
+								selectInput('hipie_select_x', 'Variable: ',
+                              choices = "", selected = ""),
+								textInput(inputId = "hipie_xlabel", label = "X Axes Label: ",
+                  value = "label")
+							),
+
+							column(2,
+								textInput(inputId = "hipie_title", label = "Title: ",
+									value = "title"),
+                textInput(inputId = "hipie_ylabel", label = "Y Axes Label: ",
+                  value = "label")
+							),
+
+							column(8, align = 'center',
+                highchartOutput('hipie_plot_1', height = '600px')
+              )
+						)
 					)
 				)
 			)
