@@ -1,4 +1,5 @@
 source('helper/boxly1.R')
+source('helper/bobox.R')
 
 observeEvent(input$button_split_no, {
         num_data <- final_split$train[, sapply(final_split$train, is.numeric)]
@@ -9,11 +10,16 @@ observeEvent(input$button_split_no, {
             colnames(numdata) <- j
             updateSelectInput(session, 'boxly1_select_x',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'bobox1_select_x',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
              updateSelectInput(session, 'boxly1_select_x',
               choices = '', selected = '')
+             updateSelectInput(session, 'bobox1_select_x',
+              choices = '', selected = '')
         } else {
              updateSelectInput(session, 'boxly1_select_x', choices = names(num_data))
+             updateSelectInput(session, 'bobox1_select_x', choices = names(num_data))
         }
 
 })
@@ -27,12 +33,18 @@ observeEvent(input$submit_part_train_per, {
             colnames(numdata) <- j
             updateSelectInput(session, 'boxly1_select_x',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'bobox1_select_x',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
              updateSelectInput(session, 'boxly1_select_x',
               choices = '', selected = '')
+             updateSelectInput(session, 'bobox1_select_x',
+              choices = '', selected = '')
         } else {
              updateSelectInput(session, 'boxly1_select_x', choices = names(num_data))
+             updateSelectInput(session, 'bobox1_select_x', choices = names(num_data))
         }
+
 })
 
 
@@ -40,4 +52,10 @@ output$boxly1_plot_1 <- renderPlotly({
   boxly1(data = final_split$train, y = input$boxly1_select_x, 
     title = input$boxly1_title, name = input$boxly1_xlabel,
     x_title = NULL, y_title = input$boxly1_ylabel)
+})
+
+output$bobox1_plot_1 <- renderRbokeh({
+  bobox(data = final_split$train, x_data = input$bobox1_select_x, 
+    fig_title = input$bobox1_title, x_lab = input$bobox1_xlabel,
+    y_lab = input$bobox1_ylabel)
 })

@@ -38,7 +38,31 @@ tabPanel('Box Plot - I', value = 'tab_box_plot_1',
                 plotlyOutput('boxly1_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('rbokeh',
+
+						fluidRow(
+							column(2,
+								selectInput('bobox1_select_x', 'Variable 1: ',
+                              choices = "", selected = ""),
+								textInput(inputId = "bobox1_xlabel", label = "X Axes Label: ",
+                  value = "label")
+							),
+
+							column(2,
+								textInput(inputId = "bobox1_title", label = "Title: ",
+									value = "title"),
+                textInput(inputId = "bobox1_ylabel", label = "Y Axes Label: ",
+                  value = "label")
+							),
+
+							column(8, align = 'center',
+                rbokehOutput('bobox1_plot_1', height = '600px')
+              )
+						)
 					)
+
 				)
 			)
 		)
