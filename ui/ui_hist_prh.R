@@ -61,6 +61,29 @@ tabPanel('Histogram', value = 'tab_hist_prh',
                 rbokehOutput('bohist_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('highcharts',
+
+						fluidRow(
+							column(2,
+								selectInput('hihist_select_x', 'Variable 1: ',
+                              choices = "", selected = ""),
+								textInput(inputId = "hihist_xlabel", label = "X Axes Label: ",
+                  value = "label")
+							),
+
+							column(2,
+								textInput(inputId = "hihist_title", label = "Title: ",
+									value = "title"),
+                textInput(inputId = "hihist_color", label = "Color: ",
+                  value = "blue")
+							),
+
+							column(8, align = 'center',
+                highchartOutput('hihist_plot_1', height = '600px')
+              )
+						)
 					)
 
 				)
