@@ -40,7 +40,33 @@ tabPanel('Scatter Plot', value = 'tab_scatter_prh',
                 plotlyOutput('scatly_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('rbokeh',
+
+						fluidRow(
+							column(2,
+								selectInput('boscat_select_x', 'Variable X: ',
+                              choices = "", selected = ""),
+								textInput(inputId = "boscat_xlabel", label = "X Axes Label: ",
+                  value = "label"),
+								textInput(inputId = "boscat_title", label = "Title: ",
+									value = "title")
+							),
+
+							column(2,
+								selectInput('boscat_select_y', 'Variable Y: ',
+                              choices = "", selected = ""),
+                textInput(inputId = "boscat_ylabel", label = "Y Axes Label: ",
+                  value = "label")
+							),
+
+							column(8, align = 'center',
+                rbokehOutput('boscat_plot_1', height = '600px')
+              )
+						)
 					)
+
 				)
 			)
 		)
