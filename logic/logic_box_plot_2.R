@@ -1,4 +1,5 @@
 source('helper/boxly2.R')
+source('helper/bobox2.R')
 
 observeEvent(input$button_split_no, {
         num_data <- final_split$train[, sapply(final_split$train, is.numeric)]
@@ -9,11 +10,14 @@ observeEvent(input$button_split_no, {
             colnames(numdata) <- j
             updateSelectInput(session, 'boxly2_select_y',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'bobox2_select_y',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
-             updateSelectInput(session, 'boxly2_select_y',
-              choices = '', selected = '')
+             updateSelectInput(session, 'boxly2_select_y', choices = '', selected = '')
+             updateSelectInput(session, 'bobox2_select_y', choices = '', selected = '')
         } else {
              updateSelectInput(session, 'boxly2_select_y', choices = names(num_data))
+             updateSelectInput(session, 'bobox2_select_y', choices = names(num_data))
         }
 
         f_data <- final_split$train[, sapply(final_split$train, is.factor)]
@@ -25,15 +29,20 @@ observeEvent(input$button_split_no, {
         colnames(fdata) <- j
         updateSelectInput(session, 'boxly2_select_x',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'bobox2_select_x',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'boxly2_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'bobox2_select_x', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'boxly2_select_x', choices = names(f_data))
+          updateSelectInput(session, 'bobox2_select_x', choices = names(f_data))
         }
 
 })
 
 observeEvent(input$submit_part_train_per, {
+        
         num_data <- final_split$train[, sapply(final_split$train, is.numeric)]
         if (is.null(dim(num_data))) {
             k <- final_split$train %>% map(is.numeric) %>% unlist()
@@ -42,11 +51,14 @@ observeEvent(input$submit_part_train_per, {
             colnames(numdata) <- j
             updateSelectInput(session, 'boxly2_select_y',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'bobox2_select_y',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
-             updateSelectInput(session, 'boxly2_select_y',
-              choices = '', selected = '')
+             updateSelectInput(session, 'boxly2_select_y', choices = '', selected = '')
+             updateSelectInput(session, 'bobox2_select_y', choices = '', selected = '')
         } else {
              updateSelectInput(session, 'boxly2_select_y', choices = names(num_data))
+             updateSelectInput(session, 'bobox2_select_y', choices = names(num_data))
         }
 
         f_data <- final_split$train[, sapply(final_split$train, is.factor)]
@@ -58,10 +70,14 @@ observeEvent(input$submit_part_train_per, {
         colnames(fdata) <- j
         updateSelectInput(session, 'boxly2_select_x',
               choices = names(fdata), selected = names(fdata))
+        updateSelectInput(session, 'bobox2_select_x',
+              choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'boxly2_select_x', choices = '', selected = '')
+          updateSelectInput(session, 'bobox2_select_x', choices = '', selected = '')
         } else {
           updateSelectInput(session, 'boxly2_select_x', choices = names(f_data))
+          updateSelectInput(session, 'bobox2_select_x', choices = names(f_data))
         }
 })
 
@@ -70,4 +86,11 @@ output$boxly2_plot_1 <- renderPlotly({
   boxly2(data = final_split$train, y = input$boxly2_select_y, 
     x = input$boxly2_select_x, title = input$boxly2_title, 
     x_title = input$boxly2_ylabel, y_title = input$boxly2_ylabel)
+})
+
+
+output$bobox2_plot_1 <- renderRbokeh({
+  bobox2(data = final_split$train, y_data = input$bobox2_select_y, 
+    x_data = input$bobox2_select_x, fig_title = input$bobox2_title, 
+    x_lab = input$bobox2_ylabel, y_lab = input$bobox2_ylabel)
 })
