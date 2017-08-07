@@ -1,4 +1,4 @@
-tabPanel('Home', value = 'tab_eda_home',
+tabPanel('EDA', value = 'tab_eda_home',
 
 	fluidPage(
 
