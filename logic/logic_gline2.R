@@ -121,23 +121,23 @@ observeEvent(input$submit_part_train_per, {
         fdata <- tibble::as_data_frame(f_data)
         colnames(fdata) <- q
         updateSelectInput(session, inputId = "gline2_group",
-            choices = list('NA' = 'NA', names(fdata)), selected = 'NA')
+            choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, inputId = "gline2_col",
-            choices = list('NA' = 'NA', names(fdata)), selected = 'NA')
+            choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, inputId = "gline2_ltype",
-            choices = list('NA' = 'NA', names(fdata)), selected = 'NA')
+            choices = names(fdata), selected = names(fdata))
         updateSelectInput(session, inputId = "gline2_size",
-            choices = list('NA' = 'NA', names(fdata)), selected = 'NA')
+            choices = names(fdata), selected = names(fdata))
         } else if (dim(f_data)[2] == 0) {
           updateSelectInput(session, 'gline2_group', choices = '', selected = '')
           updateSelectInput(session, 'gline2_col', choices = '', selected = '')
           updateSelectInput(session, 'gline2_ltype', choices = '', selected = '')
           updateSelectInput(session, 'gline2_size', choices = '', selected = '')
         } else {
-          updateSelectInput(session, 'gline2_group', choices = list('NA' = 'NA', names(f_data)), selected = 'NA')  
-          updateSelectInput(session, 'gline2_col', choices = list('NA' = 'NA', names(f_data)), selected = 'NA')  
-          updateSelectInput(session, 'gline2_ltype', choices = list('NA' = 'NA', names(f_data)), selected = 'NA')  
-          updateSelectInput(session, 'gline2_size', choices = list('NA' = 'NA', names(f_data)), selected = 'NA')  
+          updateSelectInput(session, 'gline2_group', choices = names(f_data), selected = names(f_data))  
+          updateSelectInput(session, 'gline2_col', choices = names(f_data), selected = names(f_data))  
+          updateSelectInput(session, 'gline2_ltype', choices = names(f_data), selected = names(f_data))  
+          updateSelectInput(session, 'gline2_size', choices = names(f_data), selected = names(f_data))  
         }
 })
 
