@@ -1,4 +1,4 @@
-tabPanel("Menu", value = "tab_analyze_home",
+tabPanel("Home", value = "tab_analyze_home",
 	fluidPage(
 		
 		fluidRow(
@@ -85,7 +85,7 @@ tabPanel("Menu", value = "tab_analyze_home",
 			column(3, align = 'center',
 				br(),
 				actionButton(
-					inputId = 'click_visualize',
+					inputId = 'click_model',
 					label = 'Click Here',
 					width = '100px'
 				)
@@ -105,7 +105,7 @@ tabPanel("Menu", value = "tab_analyze_home",
 			column(3, align = 'center',
 				br(),
 				actionButton(
-					inputId = 'click_model',
+					inputId = 'click_visualize',
 					label = 'Click Here',
 					width = '100px'
 				)
