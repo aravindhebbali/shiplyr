@@ -1,6 +1,6 @@
 tabPanel('Inference', value = 'tab_infer', icon = icon('cogs'),
 
-	navlistPanel(id = 'navlist_viz',
+	navlistPanel(id = 'navlist_infer',
         well = FALSE,
         widths = c(2, 10),
 
