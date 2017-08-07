@@ -1,113 +1,70 @@
-tabPanel("Menu", value = "tab_home_viz",
+tabPanel("Home", value = "tab_home_viz",
 
 	fluidPage(
 
 		fluidRow(
 			column(12, align = 'center',
-				h3("What do you want to do?")
+				h3("Please choose a library")
 			)
 		),
 
 		br(),
 
-		fluidRow(column(6, offset = 3, hr())),
+		fluidRow(column(12, hr())),
 
 		fluidRow(			
-			column(3),
-			column(4, align = 'left',
+			column(3, align = 'center',
+				img(src = 'Rlogonew.png', width = '100px', height = '100px')
+			),
+			column(6, align = 'center',
 				h5("Compare data across categories")
 			),
-			column(2, align = 'left',
-				actionButton(inputId = "click_bar", 
-					label = "Bar Chart",
+			column(3, align = 'center',
+				actionButton(inputId = "click_base", 
+					label = "Click Here",
 					width = "120px"
 				)
-			),
-			column(3)
+			)
 		),
 
-		fluidRow(column(6, offset = 3, hr())),
+		fluidRow(column(12, hr())),
 
-		fluidRow(
-			column(3),
-			column(4, align = 'left',
-				h5("View trends in data over time")
+		fluidRow(			
+			column(3, align = 'center',
+				img(src = 'ggplot2_logo.png', width = '100px', height = '100px')
 			),
-			column(2, align = 'left',
-				actionButton(inputId = "click_line", 
-					label = "Line Chart",
+			column(6, align = 'center',
+				h5("Compare data across categories")
+			),
+			column(3, align = 'center',
+				actionButton(inputId = "click_ggplot2", 
+					label = "Click Here",
 					width = "120px"
 				)
-			),
-			column(3)
+			)
 		),
 
-		fluidRow(column(6, offset = 3, hr())),
+		fluidRow(column(12, hr())),
 
-		fluidRow(
-			column(3),
-			column(4, align = 'left',
-				h5("Display proportions")
+		fluidRow(			
+			column(3, align = 'center',
+				img(src = 'highcharts_logo.png', width = '25px', height = '25px'),
+				img(src = 'bokeh_logo.png', width = '25px', height = '25px'),
+				img(src = 'plotly_logo.png', width = '25px', height = '25px')
 			),
-			column(2, align = 'left',
-				actionButton(inputId = "click_pie", 
-					label = "Pie Chart",
+			column(6, align = 'center',
+				h5("Compare data across categories")
+			),
+			column(3, align = 'center',
+				actionButton(inputId = "click_prh", 
+					label = "Click Here",
 					width = "120px"
 				)
-			),
-			column(3)
+			)
 		),
 
-		fluidRow(column(6, offset = 3, hr())),
-
-		fluidRow(
-			column(3),
-			column(4, align = 'left',
-				h5("Explore relationship between continuous variables")
-			),
-			column(2, align = 'left',
-				actionButton(inputId = "click_scatter", 
-					label = "Scatter Plot",
-					width = "120px"
-				)
-			),
-			column(3)
-		),
-
-		fluidRow(column(6, offset = 3, hr())),
-
-		fluidRow(
-			column(3),
-			column(4, align = 'left',
-				h5("Understand distribution of your data")
-			),
-			column(2, align = 'left',
-				actionButton(inputId = "click_hist", 
-					label = "Histogram",
-					width = "120px"
-				)
-			),
-			column(3)
-		),
-
-		fluidRow(column(6, offset = 3, hr())),
-
-		fluidRow(
-			column(3),
-			column(4, align = 'left',
-				h5("Compare distribution across groups and/or identify outliers")
-			),
-			column(2, align = 'left',
-				actionButton(inputId = "click_box", 
-					label = "Box Plot",
-					width = "120px"
-				)
-			),
-			column(3)
-		),
-
-		fluidRow(column(6, offset = 3, hr()))
-
+		fluidRow(column(12, hr()))
+		
 	)
 
 )
