@@ -1,4 +1,4 @@
-tabPanel('Base', value = 'tab_base',
+tabPanel('Base', value = 'tab_base', icon = icon('bar-chart'),
 
 	navlistPanel(id = 'navlist_base',
         well = FALSE,
