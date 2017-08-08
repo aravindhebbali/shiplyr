@@ -72,7 +72,11 @@ observeEvent(input$submit_part_train_per, {
 output$scatly_plot_1 <- renderPlotly({
   scatterly(data = final_split$train, y = input$scatly_select_y, 
     x = input$scatly_select_x, title = input$scatly_title, show_legend = FALSE,
-    x_title = input$scatly_xlabel, y_title = input$scatly_ylabel)
+    x_title = input$scatly_xlabel, y_title = input$scatly_ylabel,
+    text = input$scatly_text, color = input$scatly_color, opacity = input$scatly_opacity, 
+    symbol = input$scatly_symbol, size = input$scatly_size, 
+    fit_line = input$scatly_fit, line_col = input$scatly_lcol,
+    line_type = input$scatly_ltype, line_width = input$scatly_lsize)
 })
 
 output$boscat_plot_1 <- renderRbokeh({
