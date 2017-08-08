@@ -1,4 +1,4 @@
-tabPanel('Home', value = 'tab_viz_home',
+tabPanel('Home', value = 'tab_viz_home', icon = icon('home'),
 
 	navlistPanel(id = 'navlist_vizmenu',
         well = FALSE,
