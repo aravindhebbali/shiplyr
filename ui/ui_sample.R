@@ -1,4 +1,4 @@
-tabPanel('Sample', value = 'tab_sample', icon = icon('database'),
+tabPanel('Sample', value = 'tab_sample', icon = icon('random'),
 
 	fluidPage(
 
@@ -40,13 +40,13 @@ tabPanel('Sample', value = 'tab_sample', icon = icon('database'),
 			),
 
 			br(),
-			br(),
+			br()
 
-			column(12, align = 'center',
+			# column(12, align = 'center',
 
-				uiOutput('samp_no_yes')
+			# 	uiOutput('samp_no_yes')
 
-			)
+			# )
 
 		),
 
