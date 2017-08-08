@@ -48,9 +48,9 @@ tabPanel("Home", value = "tab_home_viz",
 
 		fluidRow(			
 			column(3, align = 'center',
-				img(src = 'highcharts_logo.png', width = '25px', height = '25px'),
-				img(src = 'bokeh_logo.png', width = '25px', height = '25px'),
-				img(src = 'plotly_logo.png', width = '25px', height = '25px')
+				img(src = 'highcharts_logo.png', width = '40px', height = '40px'),
+				img(src = 'bokeh_logo.png', width = '40px', height = '40px'),
+				img(src = 'plotly_logo.png', width = '40px', height = '40px')
 			),
 			column(6, align = 'center',
 				h5("Compare data across categories")
