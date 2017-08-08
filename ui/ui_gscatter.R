@@ -71,7 +71,7 @@ tabPanel('Scatter Plot', value = 'tab_gscatter',
 							)							
 						),
 
-						column(8,
+						column(6,
               plotOutput('gscatter_plot_2', height = '600px')
             )
 
