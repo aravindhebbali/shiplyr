@@ -1,4 +1,4 @@
-tabPanel('Others', value = 'tab_others',
+tabPanel('Others', value = 'tab_others', icon = icon('pie-chart'),
 
 	navlistPanel(id = 'navlist_others',
     well = FALSE,
