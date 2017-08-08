@@ -1,4 +1,4 @@
-tabPanel('Get Data', value = 'tab_upload', icon = icon('database'),
+tabPanel('Get Data', value = 'tab_upload', icon = icon('server'),
 
     navlistPanel(id = 'navlist_up',
         well = FALSE,
