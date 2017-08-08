@@ -32,16 +32,16 @@ samp_yes <- eventReactive(input$button_sample_yes, {
 
 })
 
-samp_no <- eventReactive(input$button_sample_no, {
+# samp_no <- eventReactive(input$button_sample_no, {
 
-	fluidRow(
-		br(),
-		tags$div(class = 'header', id = 'samp_remove_no',
-			tags$h6('Click on Analyze in the drop down menu to explore the data.')
-		)
-	)
+# 	fluidRow(
+# 		br(),
+# 		tags$div(class = 'header', id = 'samp_remove_no',
+# 			tags$h6('Click on Analyze in the drop down menu to explore the data.')
+# 		)
+# 	)
 
-})
+# })
 
 
 output$samp_yes_no <- renderUI({
@@ -50,11 +50,11 @@ output$samp_yes_no <- renderUI({
 
 })
 
-output$samp_no_yes <- renderUI({
+# output$samp_no_yes <- renderUI({
 
-	samp_no()
+# 	samp_no()
 
-})
+# })
 
 
 samp_per_options <- eventReactive(input$button_samp_per, {
