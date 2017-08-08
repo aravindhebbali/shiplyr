@@ -1,4 +1,4 @@
-tabPanel('ggplot2', value = 'tab_gg',
+tabPanel('ggplot2', value = 'tab_gg', icon = icon('area-chart'),
 
 	navlistPanel(id = 'navlist_gg',
     well = FALSE,
