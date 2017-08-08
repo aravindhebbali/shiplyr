@@ -1,7 +1,7 @@
 library(dplyr)
 library(plotly)
 
-linely <- function(data, x, mode = 'lines', lcol = 'blue', lwidth = 1, ltype = 'plain',
+linely <- function(data, x, y, mode = 'lines', lcol = 'blue', lwidth = 1, ltype = 'plain',
                    title = NULL, p_bgcol = NULL, plot_bgcol = NULL,
                    title_family = 'Arial', title_size = 12, title_color = 'black',
                    axis_modify = FALSE, x_min, x_max, y_min, y_max,
@@ -21,8 +21,8 @@ linely <- function(data, x, mode = 'lines', lcol = 'blue', lwidth = 1, ltype = '
                    add_txt = FALSE, t_x, t_y, t_text, t_showarrow = FALSE, 
                    t_font = 'Arial', t_size = 10, t_col = 'blue') {
   
-  yax <- data %>% select_(x) %>% unlist()
-  xax <- yax %>% length() %>% seq_len()
+  yax <- data %>% select(y) %>% pull(1)
+  xax <- data %>% select(x) %>% pull(1)
   
   p <- plot_ly(data = data,
                type = "scatter", 
@@ -123,11 +123,11 @@ linely <- function(data, x, mode = 'lines', lcol = 'blue', lwidth = 1, ltype = '
   
 }
 
-data1 <- c(7.2, 7.6, 6.8, 6.5, 7)
-data2 <- c(6.8, 7.2, 7.8, 7, 6.2)
-data <- data.frame(x = data1, y = data2)
-
-p <- linely(data, 'x', mode = 'lines+markers', title = 'Line Chart', 
-            x_title = 'Year', y_title = 'Growth', axis_modify = TRUE, 
-            x_min = 0, x_max = 7, y_min = 4, y_max = 9)
-p
+# data1 <- c(7.2, 7.6, 6.8, 6.5, 7)
+# data2 <- c(6.8, 7.2, 7.8, 7, 6.2)
+# data <- data.frame(x = data1, y = data2)
+# 
+# p <- linely(gdp, 'india', mode = 'lines+markers', title = 'Line Chart',
+#             x_title = 'Year', y_title = 'Growth', axis_modify = TRUE,
+#             x_min = 0, x_max = 7, y_min = 4, y_max = 9)
+# p
