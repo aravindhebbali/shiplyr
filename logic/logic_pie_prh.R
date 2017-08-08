@@ -49,7 +49,11 @@ observeEvent(input$submit_part_train_per, {
 output$piely_plot_1 <- renderPlotly({
   piely(data = final_split$train, x = input$piely_select_x, 
     title = input$piely_title, 
-    x_title = input$piely_xlabel, y_title = input$piely_ylabel)
+    x_title = input$piely_xlabel, y_title = input$piely_ylabel,
+    text_pos = input$piely_text_pos, text_info = input$piely_text_info,
+    text_direction = input$piely_text_dir, text_rotation = input$piely_text_rotation,  
+    pie_pull = input$piely_pull, pie_hole = input$piely_hole, 
+    col_opacity = input$piely_opacity, pie_l_col = input$piely_color)
 })
 
 output$hipie_plot_1 <- renderHighchart({
