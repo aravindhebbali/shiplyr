@@ -1,4 +1,4 @@
-tabPanel("Base", value = "tab_viz_base",
+tabPanel("Base", value = "tab_viz_base", 
 
 	fluidPage(
 
