@@ -57,8 +57,9 @@ observeEvent(input$submit_part_train_per, {
 
 output$barly1_plot_1 <- renderPlotly({
   barly1(data = final_split$train, x_data = input$barly1_select_x, 
-    title = input$barly1_title, 
-    x_title = input$barly1_xlabel, y_title = input$barly1_ylabel)
+    title = input$barly1_title, x_title = input$barly1_xlabel, 
+    y_title = input$barly1_ylabel, bar_col = input$barly1_color,
+    b_text = input$barly1_btext)
 })
 
 output$bobar1_plot_1 <- renderRbokeh({

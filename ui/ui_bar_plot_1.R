@@ -24,14 +24,18 @@ tabPanel('Bar Plot - I', value = 'tab_bar_plot_1',
 								selectInput('barly1_select_x', 'Variable: ',
                               choices = "", selected = ""),
 								textInput(inputId = "barly1_xlabel", label = "X Axes Label: ",
-                  value = "label")
+                  value = "label"),
+								textInput(inputId = "barly1_color", label = "Color: ",
+                  value = "blue")
 							),
 
 							column(2,
 								textInput(inputId = "barly1_title", label = "Title: ",
 									value = "title"),
                 textInput(inputId = "barly1_ylabel", label = "Y Axes Label: ",
-                  value = "label")
+                  value = "label"),
+                textInput(inputId = "barly1_btext", label = "Text: ",
+                  value = "")
 							),
 
 							column(8, align = 'center',
