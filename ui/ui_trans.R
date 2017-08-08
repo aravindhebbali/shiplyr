@@ -1,4 +1,4 @@
-tabPanel('Transform', value = 'tab_trans', icon = icon('database'),
+tabPanel('Transform', value = 'tab_trans', icon = icon('rotate-right'),
 
     navlistPanel(id = 'navlist_trans',
         well = FALSE,
