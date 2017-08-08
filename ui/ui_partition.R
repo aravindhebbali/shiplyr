@@ -1,4 +1,4 @@
-tabPanel('Partition', value = 'tab_partition', icon = icon('database'),
+tabPanel('Partition', value = 'tab_partition', icon = icon('cut'),
 
 	fluidPage(
 
