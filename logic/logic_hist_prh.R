@@ -84,7 +84,12 @@ output$histly_plot_1 <- renderPlotly({
 output$bohist_plot_1 <- renderRbokeh({
   bohist(data = final_split$train, x_data = input$bohist_select_x, 
     fig_title = input$bohist_title, x_lab = input$bohist_xlabel,
-    y_lab = input$bohist_ylabel)
+    y_lab = input$bohist_ylabel, h_breaks = input$bohist_breaks, 
+    h_freq = input$bohist_density, h_incl_low = input$bohist_lowest, 
+    h_right = input$bohist_right, h_fill_col = input$bohist_color, 
+    add_density = input$bohist_add, den_col = input$bohist_dcolor, 
+    den_alpha = input$bohist_dalpha, den_width = input$bohist_dwidth, 
+    den_type = input$bohist_dtype)
 })
 
 output$hihist_plot_1 <- renderHighchart({
