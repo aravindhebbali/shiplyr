@@ -48,6 +48,12 @@ tabPanel('Box Plot - II', value = 'tab_box_plot_2',
 							column(2,
 								selectInput('bobox2_select_x', 'Variable 1: ',
                               choices = "", selected = ""),
+								numericInput(inputId = "bobox2_oshape", label = "Outlier Shape: ",
+                	value = 1, min = 0, max = 25, step = 1),
+								numericInput(inputId = "bobox2_width", label = "Width: ",
+                	value = 0.9, min = 0, max = 1, step = 0.1),
+								selectInput('bobox2_xgrid', 'X Axis Grid: ',
+                              choices = c("TRUE" = TRUE, "FALSE" = FALSE), selected = "TRUE"),
 								textInput(inputId = "bobox2_xlabel", label = "X Axes Label: ",
                   value = "label"),
 								textInput(inputId = "bobox2_title", label = "Title: ",
@@ -57,12 +63,18 @@ tabPanel('Box Plot - II', value = 'tab_box_plot_2',
 							column(2,
 								selectInput('bobox2_select_y', 'Variable 2: ',
                               choices = "", selected = ""),
-                textInput(inputId = "bobox2_ylabel", label = "Y Axes Label: ",
+								numericInput(inputId = "bobox2_osize", label = "Outlier Size: ",
+                	value = 10, min = 0, step = 1),
+								numericInput(inputId = "bobox2_alpha", label = "Alpha: ",
+                	value = 1, min = 0, max = 1, step = 0.1),
+								selectInput('bobox2_ygrid', 'Y Axis Grid: ',
+                              choices = c("TRUE" = TRUE, "FALSE" = FALSE), selected = "TRUE"),
+								textInput(inputId = "bobox2_ylabel", label = "Y Axes Label: ",
                   value = "label")
 							),
 
 							column(8, align = 'center',
-                plotlyOutput('bobox2_plot_1', height = '600px')
+                rbokehOutput('bobox2_plot_1', height = '600px')
               )
 						)
 					),

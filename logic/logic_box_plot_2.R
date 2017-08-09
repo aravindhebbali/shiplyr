@@ -109,7 +109,11 @@ output$boxly2_plot_1 <- renderPlotly({
 output$bobox2_plot_1 <- renderRbokeh({
   bobox2(data = final_split$train, y_data = input$bobox2_select_y, 
     x_data = input$bobox2_select_x, fig_title = input$bobox2_title, 
-    x_lab = input$bobox2_ylabel, y_lab = input$bobox2_ylabel)
+    x_lab = input$bobox2_ylabel, y_lab = input$bobox2_ylabel,
+    x_grid = input$bobox2_xgrid, y_grid = input$bobox2_ygrid, 
+    box_w = input$bobox2_width, box_alp = input$bobox2_alpha, 
+    box_out_gly = input$bobox2_oshape, box_out_size = input$bobox2_osize,
+    legend_loc = input$bobox2_legloc)
 })
 
 output$hibox2_plot_1 <- renderHighchart({
