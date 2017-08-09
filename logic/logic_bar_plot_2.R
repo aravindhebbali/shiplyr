@@ -88,7 +88,11 @@ output$barly2_plot_1 <- renderPlotly({
 output$bobar2_plot_1 <- renderRbokeh({
   bobar2(data = final_split$train, var_1 = input$bobar2_select_x, 
     var_2 = input$bobar2_select_y, fig_title = input$bobar2_title, 
-    x_lab = input$bobar2_xlabel, y_lab = input$bobar2_ylabel)
+    x_lab = input$bobar2_xlabel, y_lab = input$bobar2_ylabel,
+    x_grid = input$bobar2_xgrid, y_grid = input$bobar2_ygrid, 
+    legend_loc = input$bobar2_legloc, bar_pos = input$bobar2_type,
+    bar_hover = input$bobar2_hover, bar_width = input$bobar2_width, 
+    bar_f_alpha = input$bobar2_alpha)
 })
 
 output$hibar2_plot_1 <- renderHighchart({
