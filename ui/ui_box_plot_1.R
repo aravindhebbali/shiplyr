@@ -44,17 +44,33 @@ tabPanel('Box Plot - I', value = 'tab_box_plot_1',
 
 						fluidRow(
 							column(2,
-								selectInput('bobox1_select_x', 'Variable 1: ',
+								selectInput('bobox1_select_x', 'Variable: ',
                               choices = "", selected = ""),
 								textInput(inputId = "bobox1_xlabel", label = "X Axes Label: ",
-                  value = "label")
+                  value = "label"),
+								textInput(inputId = "bobox1_color", label = "Color: ",
+                  value = ""),
+								numericInput(inputId = "bobox1_oshape", label = "Outlier Shape: ",
+                	value = 1, min = 0, max = 25, step = 1),
+								numericInput(inputId = "bobox1_width", label = "Width: ",
+                	value = 0.9, min = 0, max = 1, step = 0.1),
+								selectInput('bobox1_xgrid', 'X Axis Grid: ',
+                              choices = c("TRUE" = TRUE, "FALSE" = FALSE), selected = "TRUE")
 							),
 
 							column(2,
 								textInput(inputId = "bobox1_title", label = "Title: ",
 									value = "title"),
                 textInput(inputId = "bobox1_ylabel", label = "Y Axes Label: ",
-                  value = "label")
+                  value = "label"),
+                numericInput(inputId = "bobox1_alpha", label = "Alpha: ",
+                	value = 1, min = 0, max = 1, step = 0.1),
+                numericInput(inputId = "bobox1_osize", label = "Outlier Size: ",
+                	value = 10, min = 0, step = 1),
+                textInput(inputId = "bobox1_lcolor", label = "Line Color: ",
+                  value = ""),
+                selectInput('bobox1_ygrid', 'Y Axis Grid: ',
+                              choices = c("TRUE" = TRUE, "FALSE" = FALSE), selected = "TRUE")
 							),
 
 							column(8, align = 'center',

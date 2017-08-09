@@ -57,5 +57,9 @@ output$boxly1_plot_1 <- renderPlotly({
 output$bobox1_plot_1 <- renderRbokeh({
   bobox(data = final_split$train, x_data = input$bobox1_select_x, 
     fig_title = input$bobox1_title, x_lab = input$bobox1_xlabel,
-    y_lab = input$bobox1_ylabel)
+    y_lab = input$bobox1_ylabel, ,
+    x_grid = input$bobox1_xgrid, y_grid = input$bobox1_ygrid, 
+    box_w = input$bobox1_width, box_col = input$bobox1_color, 
+    box_alp = input$bobox1_alpha, box_l_col = input$bobox1_lcolor,
+    box_out_gly = input$bobox1_oshape, box_out_size = input$bobox1_osize)
 })
