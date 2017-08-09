@@ -79,8 +79,33 @@ output$scatly_plot_1 <- renderPlotly({
     line_type = input$scatly_ltype, line_width = input$scatly_lsize)
 })
 
+# fitstat <- eventReactive({
+#   model <- lm(input$boscat_select_y ~ input$boscat_select_x, data = final_split$train)
+#   return(model$coefficients)
+# })
+
+# intercept <- reactive({
+#   fitstat()[[1]]
+# })
+
+# slope <- reactive({
+#   fitstat()[[2]]
+# })
+
+# observe({
+#   updateNumericInput(session, inputId = "boscat_fint", value = intercept())
+#   updateNumericInput(session, inputId = "boscat_fslope", value = slope())
+# })
+
 output$boscat_plot_1 <- renderRbokeh({
   bokatter(data = final_split$train, y_data = input$boscat_select_y, 
     x_data = input$boscat_select_x, fig_title = input$boscat_title, 
-    x_lab = input$boscat_xlabel, y_lab = input$boscat_ylabel)
+    x_lab = input$boscat_xlabel, y_lab = input$boscat_ylabel,
+    x_grid = input$boscat_xgrid, y_grid = input$boscat_ygrid, 
+    glyph = input$boscat_shape, point_size = input$boscat_size, 
+    inner_col = input$boscat_color, inner_alpha = input$boscat_alpha, 
+    add_line = input$boscat_fitline, line_a = input$boscat_fint,  
+    line_b = input$boscat_fslope, line_color  = input$boscat_lcolor, 
+    line_alpha = input$boscat_lalpha, line_width = input$boscat_lwidth, 
+    line_type = input$boscat_ltype)
 })
