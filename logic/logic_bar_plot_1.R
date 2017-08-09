@@ -64,8 +64,12 @@ output$barly1_plot_1 <- renderPlotly({
 
 output$bobar1_plot_1 <- renderRbokeh({
   bobar(data = final_split$train, x_data = input$bobar1_select_x, 
-    fig_title = input$bobar1_title, 
-    x_lab = input$bobar1_xlabel, y_lab = input$bobar1_ylabel)
+    fig_title = input$bobar1_title, x_lab = input$bobar1_xlabel, 
+    y_lab = input$bobar1_ylabel, x_grid = input$bobar1_xgrid, 
+    y_grid = input$bobar1_ygrid, bar_width = input$bobar1_width, 
+    bar_hover = input$bobar1_hover, bar_col = input$bobar1_color, 
+    bar_f_alpha = input$bobar1_alpha, bar_l_col = input$bobar1_lcolor, 
+    bar_l_alpha = input$bobar1_lalpha)
 })
 
 output$hibar1_plot_1 <- renderHighchart({
