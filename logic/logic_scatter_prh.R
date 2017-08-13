@@ -1,5 +1,6 @@
 source('helper/scatterly.R')
 source('helper/boscatter.R')
+source('helper/hscatter.R')
 
 observeEvent(input$button_split_no, {
 
@@ -17,6 +18,10 @@ observeEvent(input$button_split_no, {
               choices = names(numdata), selected = names(numdata))
             updateSelectInput(session, 'boscat_select_y',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hiscat_select_x',
+              choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hiscat_select_y',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
              updateSelectInput(session, 'scatly_select_x',
               choices = '', selected = '')
@@ -26,11 +31,17 @@ observeEvent(input$button_split_no, {
               choices = '', selected = '')
              updateSelectInput(session, 'boscat_select_y',
               choices = '', selected = '')
+             updateSelectInput(session, 'hiscat_select_x',
+              choices = '', selected = '')
+             updateSelectInput(session, 'hiscat_select_y',
+              choices = '', selected = '')
         } else {
              updateSelectInput(session, 'scatly_select_x', choices = names(num_data))
              updateSelectInput(session, 'scatly_select_y', choices = names(num_data))
              updateSelectInput(session, 'boscat_select_x', choices = names(num_data))
              updateSelectInput(session, 'boscat_select_y', choices = names(num_data))
+             updateSelectInput(session, 'hiscat_select_x', choices = names(num_data))
+             updateSelectInput(session, 'hiscat_select_y', choices = names(num_data))
         }
 
 })
@@ -51,6 +62,10 @@ observeEvent(input$submit_part_train_per, {
               choices = names(numdata), selected = names(numdata))
             updateSelectInput(session, 'boscat_select_y',
               choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hiscat_select_x',
+              choices = names(numdata), selected = names(numdata))
+            updateSelectInput(session, 'hiscat_select_y',
+              choices = names(numdata), selected = names(numdata))
         } else if (ncol(num_data) < 1) {
              updateSelectInput(session, 'scatly_select_x',
               choices = '', selected = '')
@@ -60,11 +75,17 @@ observeEvent(input$submit_part_train_per, {
               choices = '', selected = '')
              updateSelectInput(session, 'boscat_select_y',
               choices = '', selected = '')
+             updateSelectInput(session, 'hiscat_select_x',
+              choices = '', selected = '')
+             updateSelectInput(session, 'hiscat_select_y',
+              choices = '', selected = '')
         } else {
              updateSelectInput(session, 'scatly_select_x', choices = names(num_data))
              updateSelectInput(session, 'scatly_select_y', choices = names(num_data))
              updateSelectInput(session, 'boscat_select_x', choices = names(num_data))
              updateSelectInput(session, 'boscat_select_y', choices = names(num_data))
+             updateSelectInput(session, 'hiscat_select_x', choices = names(num_data))
+             updateSelectInput(session, 'hiscat_select_y', choices = names(num_data))
         }
 })
 
@@ -108,4 +129,15 @@ output$boscat_plot_1 <- renderRbokeh({
     line_b = input$boscat_fslope, line_color  = input$boscat_lcolor, 
     line_alpha = input$boscat_lalpha, line_width = input$boscat_lwidth, 
     line_type = input$boscat_ltype)
+})
+
+
+output$hiscat_plot_1 <- renderHighchart({
+  hscatter(data = final_split$train, x = input$hiscat_select_x, 
+    y = input$hiscat_select_y, xax_title = input$hiscat_xlabel, 
+    yax_title = input$hiscat_ylabel, point_size = input$hiscat_size, 
+    scatter_series_name = ' ', point_col = input$hiscat_color, 
+    point_shape = input$hiscat_symbol, fit_line = input$hiscat_fit, 
+    line_col = input$hiscat_lcol, line_width = input$hiscat_lsize, 
+    point_on_line = FALSE, title = input$hiscat_title, sub = input$hiscat_subtitle)
 })

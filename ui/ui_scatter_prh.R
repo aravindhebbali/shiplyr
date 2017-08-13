@@ -123,6 +123,43 @@ tabPanel('Scatter Plot', value = 'tab_scatter_prh',
                 rbokehOutput('boscat_plot_1', height = '600px')
               )
 						)
+					),
+
+					tabPanel('highcharts',
+						fluidRow(
+							column(2,
+								selectInput('hiscat_select_x', 'Variable X: ',
+                              choices = "", selected = ""),
+								textInput(inputId = "hiscat_symbol", label = "Symbol: ",
+									value = "circle"),
+								textInput(inputId = "hiscat_color", label = "Color: ",
+									value = "blue"),
+								numericInput(inputId = "hiscat_lsize", label = "Line Width: ",
+                	min = 0, step = 0.1, value = 4),
+								textInput(inputId = "hiscat_title", label = "Title: ",
+									value = "title"),
+								textInput(inputId = "hiscat_xlabel", label = "X Axes Label: ",
+                  value = "label")
+							),
+							column(2,
+								selectInput('hiscat_select_y', 'Variable Y: ',
+                              choices = "", selected = ""),
+								numericInput(inputId = "hiscat_size", label = "Size: ",
+                	min = 1, step = 1, value = 5),
+								selectInput('hiscat_fit', 'Fit Line',
+									choices = c("TRUE" = TRUE, "FALSE" = FALSE),
+									selected = "FALSE",  width = '150px'),
+								textInput(inputId = "hiscat_lcol", label = "Line Color: ",
+                  value = "black"),
+								textInput(inputId = "hiscat_subtitle", label = "Subtitle: ",
+									value = "title"),
+                textInput(inputId = "hiscat_ylabel", label = "Y Axes Label: ",
+                  value = "label")
+							),
+							column(8, align = 'center',
+								highchartOutput('hiscat_plot_1', height = '600px')
+							)
+						)
 					)
 
 				)
