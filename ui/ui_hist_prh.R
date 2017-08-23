@@ -54,7 +54,7 @@ tabPanel('Histogram', value = 'tab_hist_prh',
 							),
 
 							column(8, align = 'center',
-                plotlyOutput('histly_plot_1', height = '600px')
+                plotly::plotlyOutput('histly_plot_1', height = '600px')
               )
 						)
 					),
@@ -97,7 +97,7 @@ tabPanel('Histogram', value = 'tab_hist_prh',
 							),
 
 							column(8, align = 'center',
-                rbokehOutput('bohist_plot_1', height = '600px')
+                rbokeh::rbokehOutput('bohist_plot_1', height = '600px')
               )
 						)
 					),
@@ -120,7 +120,7 @@ tabPanel('Histogram', value = 'tab_hist_prh',
 							),
 
 							column(8, align = 'center',
-                highchartOutput('hihist_plot_1', height = '600px')
+                highcharter::highchartOutput('hihist_plot_1', height = '600px')
               )
 						)
 					)

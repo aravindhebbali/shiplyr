@@ -46,7 +46,7 @@ observeEvent(input$submit_part_train_per, {
 })
 
 
-output$piely_plot_1 <- renderPlotly({
+output$piely_plot_1 <- plotly::renderPlotly({
   piely(data = final_split$train, x = input$piely_select_x, 
     title = input$piely_title, 
     x_title = input$piely_xlabel, y_title = input$piely_ylabel,
@@ -56,6 +56,6 @@ output$piely_plot_1 <- renderPlotly({
     col_opacity = input$piely_opacity, pie_l_col = input$piely_color)
 })
 
-output$hipie_plot_1 <- renderHighchart({
+output$hipie_plot_1 <- highcharter::renderHighchart({
   highpie(data = final_split$train, column = input$hipie_select_x)
 })

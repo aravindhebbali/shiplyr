@@ -99,14 +99,14 @@ observeEvent(input$submit_part_train_per, {
 })
 
 
-output$boxly2_plot_1 <- renderPlotly({
+output$boxly2_plot_1 <- plotly::renderPlotly({
   boxly2(data = final_split$train, y = input$boxly2_select_y, 
     x = input$boxly2_select_x, title = input$boxly2_title, 
     x_title = input$boxly2_ylabel, y_title = input$boxly2_ylabel)
 })
 
 
-output$bobox2_plot_1 <- renderRbokeh({
+output$bobox2_plot_1 <- rbokeh::renderRbokeh({
   bobox2(data = final_split$train, y_data = input$bobox2_select_y, 
     x_data = input$bobox2_select_x, fig_title = input$bobox2_title, 
     x_lab = input$bobox2_ylabel, y_lab = input$bobox2_ylabel,
@@ -116,7 +116,7 @@ output$bobox2_plot_1 <- renderRbokeh({
     legend_loc = input$bobox2_legloc)
 })
 
-output$hibox2_plot_1 <- renderHighchart({
+output$hibox2_plot_1 <- highcharter::renderHighchart({
   highbox(data = final_split$train, y = input$hibox2_select_y, 
     x = input$hibox2_select_x, title = input$hibox2_title, 
     xax_title = input$hibox2_ylabel, yax_title = input$hibox2_ylabel)

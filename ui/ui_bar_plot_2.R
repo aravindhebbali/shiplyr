@@ -1,4 +1,4 @@
-tabPanel('Bar Plot - II', value = 'tab_bar_plot_2',
+tabPanel('2 Factor Bar Plot', value = 'tab_bar_plot_2',
 
 	fluidPage(
 		fluidRow(
@@ -37,7 +37,7 @@ tabPanel('Bar Plot - II', value = 'tab_bar_plot_2',
 							),
 
 							column(8, align = 'center',
-                plotlyOutput('barly2_plot_1', height = '600px')
+                plotly::plotlyOutput('barly2_plot_1', height = '600px')
               )
 						)
 					),
@@ -85,7 +85,7 @@ tabPanel('Bar Plot - II', value = 'tab_bar_plot_2',
 							),
 
 							column(8, align = 'center',
-                rbokehOutput('bobar2_plot_1', height = '600px')
+                rbokeh::rbokehOutput('bobar2_plot_1', height = '600px')
               )
 						)
 					),
@@ -116,7 +116,7 @@ tabPanel('Bar Plot - II', value = 'tab_bar_plot_2',
 							),
 
 							column(8, align = 'center',
-                highchartOutput('hibar2_plot_1', height = '600px')
+                highcharter::highchartOutput('hibar2_plot_1', height = '600px')
               )
 						)
 					)

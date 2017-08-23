@@ -64,7 +64,7 @@ observe({
   updateNumericInput(session, "histly_binend", value = max(histlydata()))
 })
 
-output$histly_plot_1 <- renderPlotly({
+output$histly_plot_1 <- plotly::renderPlotly({
   if (input$histly_auto == TRUE) {  
       histly(data = final_split$train, y = input$histly_select_x, 
         title = input$histly_title, x_title = input$histly_xlabel, hist_col = input$histly_color,
@@ -81,7 +81,7 @@ output$histly_plot_1 <- renderPlotly({
   }
 })
 
-output$bohist_plot_1 <- renderRbokeh({
+output$bohist_plot_1 <- rbokeh::renderRbokeh({
   bohist(data = final_split$train, x_data = input$bohist_select_x, 
     fig_title = input$bohist_title, x_lab = input$bohist_xlabel,
     y_lab = input$bohist_ylabel, h_breaks = input$bohist_breaks, 
@@ -92,7 +92,7 @@ output$bohist_plot_1 <- renderRbokeh({
     den_type = input$bohist_dtype)
 })
 
-output$hihist_plot_1 <- renderHighchart({
+output$hihist_plot_1 <- highcharter::renderHighchart({
   highist(data = final_split$train, column = input$hihist_select_x,
     xlab = input$hihist_xlabel, color = input$hihist_color)
 })

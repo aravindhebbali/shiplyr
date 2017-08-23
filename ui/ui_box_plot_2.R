@@ -1,4 +1,4 @@
-tabPanel('Box Plot - II', value = 'tab_box_plot_2',
+tabPanel('2 Factor Box Plot', value = 'tab_box_plot_2',
 
 	fluidPage(
 		fluidRow(
@@ -37,7 +37,7 @@ tabPanel('Box Plot - II', value = 'tab_box_plot_2',
 							),
 
 							column(8, align = 'center',
-                plotlyOutput('boxly2_plot_1', height = '600px')
+                plotly::plotlyOutput('boxly2_plot_1', height = '600px')
               )
 						)
 					),
@@ -74,7 +74,7 @@ tabPanel('Box Plot - II', value = 'tab_box_plot_2',
 							),
 
 							column(8, align = 'center',
-                rbokehOutput('bobox2_plot_1', height = '600px')
+                rbokeh::rbokehOutput('bobox2_plot_1', height = '600px')
               )
 						)
 					),
@@ -99,7 +99,7 @@ tabPanel('Box Plot - II', value = 'tab_box_plot_2',
 							),
 
 							column(8, align = 'center',
-                highchartOutput('hibox2_plot_1', height = '600px')
+                highcharter::highchartOutput('hibox2_plot_1', height = '600px')
               )
 						)
 					)

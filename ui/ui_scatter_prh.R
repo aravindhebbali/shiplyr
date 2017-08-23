@@ -56,7 +56,7 @@ tabPanel('Scatter Plot', value = 'tab_scatter_prh',
 							),
 
 							column(8, align = 'center',
-                plotlyOutput('scatly_plot_1', height = '600px')
+                plotly::plotlyOutput('scatly_plot_1', height = '600px')
               )
 						)
 					),
@@ -120,7 +120,7 @@ tabPanel('Scatter Plot', value = 'tab_scatter_prh',
 							),
 
 							column(8, align = 'center',
-                rbokehOutput('boscat_plot_1', height = '600px')
+                rbokeh::rbokehOutput('boscat_plot_1', height = '600px')
               )
 						)
 					),
@@ -157,7 +157,7 @@ tabPanel('Scatter Plot', value = 'tab_scatter_prh',
                   value = "label")
 							),
 							column(8, align = 'center',
-								highchartOutput('hiscat_plot_1', height = '600px')
+								highcharter::highchartOutput('hiscat_plot_1', height = '600px')
 							)
 						)
 					)

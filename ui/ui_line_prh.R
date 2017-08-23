@@ -43,7 +43,7 @@ tabPanel('Line Chart', value = 'tab_line_prh',
 							),
 
 							column(8, align = 'center',
-                plotlyOutput('linely_plot_1', height = '600px')
+                plotly::plotlyOutput('linely_plot_1', height = '600px')
               )
 						)
 					),
@@ -76,7 +76,7 @@ tabPanel('Line Chart', value = 'tab_line_prh',
 							),
 
 							column(8, align = 'center',
-                rbokehOutput('boline_plot_1', height = '600px')
+                rbokeh::rbokehOutput('boline_plot_1', height = '600px')
               )
 						)
 					),
@@ -104,7 +104,7 @@ tabPanel('Line Chart', value = 'tab_line_prh',
 							),
 
 							column(8, align = 'center',
-                highchartOutput('hiline_plot_1', height = '600px')
+                highcharter::highchartOutput('hiline_plot_1', height = '600px')
               )
 						)
 					)

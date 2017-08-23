@@ -1,4 +1,4 @@
-tabPanel('Box Plot - I', value = 'tab_box_plot_1',
+tabPanel('Box Plot', value = 'tab_box_plot_1',
 
 	fluidPage(
 		fluidRow(
@@ -35,7 +35,7 @@ tabPanel('Box Plot - I', value = 'tab_box_plot_1',
 							),
 
 							column(8, align = 'center',
-                plotlyOutput('boxly1_plot_1', height = '600px')
+                plotly::plotlyOutput('boxly1_plot_1', height = '600px')
               )
 						)
 					),
@@ -74,7 +74,7 @@ tabPanel('Box Plot - I', value = 'tab_box_plot_1',
 							),
 
 							column(8, align = 'center',
-                rbokehOutput('bobox1_plot_1', height = '600px')
+                rbokeh::rbokehOutput('bobox1_plot_1', height = '600px')
               )
 						)
 					)

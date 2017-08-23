@@ -79,13 +79,13 @@ observeEvent(input$submit_part_train_per, {
 })
 
 
-output$barly2_plot_1 <- renderPlotly({
+output$barly2_plot_1 <- plotly::renderPlotly({
   barly2(data = final_split$train, x = input$barly2_select_x, 
     y = input$barly2_select_y, title = input$barly2_title, 
     x_title = input$barly2_xlabel, y_title = input$barly2_ylabel)
 })
 
-output$bobar2_plot_1 <- renderRbokeh({
+output$bobar2_plot_1 <- rbokeh::renderRbokeh({
   bobar2(data = final_split$train, var_1 = input$bobar2_select_x, 
     var_2 = input$bobar2_select_y, fig_title = input$bobar2_title, 
     x_lab = input$bobar2_xlabel, y_lab = input$bobar2_ylabel,
@@ -95,7 +95,7 @@ output$bobar2_plot_1 <- renderRbokeh({
     bar_f_alpha = input$bobar2_alpha)
 })
 
-output$hibar2_plot_1 <- renderHighchart({
+output$hibar2_plot_1 <- highcharter::renderHighchart({
   bibar(data = final_split$train, x = input$hibar2_select_x, 
     y = input$hibar2_select_y, horizontal = input$hibar2_horiz,
     stacked = input$hibar2_stack)

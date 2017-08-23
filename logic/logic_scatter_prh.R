@@ -90,7 +90,7 @@ observeEvent(input$submit_part_train_per, {
 })
 
 
-output$scatly_plot_1 <- renderPlotly({
+output$scatly_plot_1 <- plotly::renderPlotly({
   scatterly(data = final_split$train, y = input$scatly_select_y, 
     x = input$scatly_select_x, title = input$scatly_title, show_legend = FALSE,
     x_title = input$scatly_xlabel, y_title = input$scatly_ylabel,
@@ -118,7 +118,7 @@ output$scatly_plot_1 <- renderPlotly({
 #   updateNumericInput(session, inputId = "boscat_fslope", value = slope())
 # })
 
-output$boscat_plot_1 <- renderRbokeh({
+output$boscat_plot_1 <- rbokeh::renderRbokeh({
   bokatter(data = final_split$train, y_data = input$boscat_select_y, 
     x_data = input$boscat_select_x, fig_title = input$boscat_title, 
     x_lab = input$boscat_xlabel, y_lab = input$boscat_ylabel,
@@ -132,7 +132,7 @@ output$boscat_plot_1 <- renderRbokeh({
 })
 
 
-output$hiscat_plot_1 <- renderHighchart({
+output$hiscat_plot_1 <- highcharter::renderHighchart({
   hscatter(data = final_split$train, x = input$hiscat_select_x, 
     y = input$hiscat_select_y, xax_title = input$hiscat_xlabel, 
     yax_title = input$hiscat_ylabel, point_size = input$hiscat_size, 

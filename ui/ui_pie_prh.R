@@ -54,7 +54,7 @@ tabPanel('Pie Chart', value = 'tab_pie_prh',
 							),
 
 							column(8, align = 'center',
-                plotlyOutput('piely_plot_1', height = '600px')
+                plotly::plotlyOutput('piely_plot_1', height = '600px')
               )
 						)
 					),
@@ -77,7 +77,7 @@ tabPanel('Pie Chart', value = 'tab_pie_prh',
 							),
 
 							column(8, align = 'center',
-                highchartOutput('hipie_plot_1', height = '600px')
+                highcharter::highchartOutput('hipie_plot_1', height = '600px')
               )
 						)
 					)

@@ -114,7 +114,7 @@ observeEvent(input$submit_part_train_per, {
 })
 
 
-output$linely_plot_1 <- renderPlotly({
+output$linely_plot_1 <- plotly::renderPlotly({
   linely(data = final_split$train, x = input$linely_select_x,
     y = input$linely_select_y, title = input$linely_title, 
     x_title = input$linely_xlabel, y_title = input$linely_ylabel, 
@@ -122,7 +122,7 @@ output$linely_plot_1 <- renderPlotly({
     ltype = input$linely_type)
 })
 
-output$boline_plot_1 <- renderRbokeh({
+output$boline_plot_1 <- rbokeh::renderRbokeh({
   boline(data = final_split$train, x_data = input$boline_select_x, 
     fig_title = input$boline_title, x_lab = input$boline_xlabel,
     y_lab = input$boline_ylabel, y_data = input$boline_select_y,
@@ -130,7 +130,7 @@ output$boline_plot_1 <- renderRbokeh({
     l_width = input$boline_width, l_alpha = input$boline_alpha)
 })
 
-output$hiline_plot_1 <- renderHighchart({
+output$hiline_plot_1 <- highcharter::renderHighchart({
   highline(data = final_split$train, x = input$hiline_select_x, 
     columns = input$hiline_select_y, add_labels = input$hiline_labels)
 })

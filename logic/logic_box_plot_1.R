@@ -48,13 +48,13 @@ observeEvent(input$submit_part_train_per, {
 })
 
 
-output$boxly1_plot_1 <- renderPlotly({
+output$boxly1_plot_1 <- plotly::renderPlotly({
   boxly1(data = final_split$train, y = input$boxly1_select_x, 
     title = input$boxly1_title, name = input$boxly1_xlabel,
     x_title = NULL, y_title = input$boxly1_ylabel)
 })
 
-output$bobox1_plot_1 <- renderRbokeh({
+output$bobox1_plot_1 <- rbokeh::renderRbokeh({
   bobox(data = final_split$train, x_data = input$bobox1_select_x, 
     fig_title = input$bobox1_title, x_lab = input$bobox1_xlabel,
     y_lab = input$bobox1_ylabel, ,
