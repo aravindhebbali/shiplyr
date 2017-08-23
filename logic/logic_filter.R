@@ -7,7 +7,8 @@ filt_ui <- eventReactive(input$button_filt_yes, {
 						inputId = 'dplyr_filter',
 						label = 'Filter:',
 						choices = '',
-						selected = ''
+						selected = '',
+						width = '120px'
 					)
 				),
 
@@ -16,7 +17,8 @@ filt_ui <- eventReactive(input$button_filt_yes, {
 						inputId = 'dplyr_filt_op',
 						label = 'Select Operator',
 						choices = c('<', '>', '<=', '>=', '=='),
-						selected = ''
+						selected = '',
+						width = '120px'
 					)
 				),
 
@@ -24,7 +26,8 @@ filt_ui <- eventReactive(input$button_filt_yes, {
 					textInput(
 						inputId = 'dplyr_filt_val',
 						label = 'Value',
-						value = '20'
+						value = '20',
+						width = '120px'
 					)
 				),
 
