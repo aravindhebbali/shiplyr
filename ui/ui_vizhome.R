@@ -8,63 +8,79 @@ tabPanel("Home", value = "tab_home_viz",
 			)
 		),
 
-		br(),
-
 		fluidRow(column(12, hr())),
 
+		br(),
+		br(),
+
 		fluidRow(			
-			column(3, align = 'center',
+			column(1),
+			column(2, align = 'right',
 				img(src = 'Rlogonew.png', width = '100px', height = '100px')
 			),
 			column(6, align = 'center',
-				h5("Compare data across categories")
+				h5("Visualize data using the graphics pacakge from base R")
 			),
-			column(3, align = 'center',
+			column(2, align = 'left',
 				actionButton(inputId = "click_base", 
 					label = "Click Here",
 					width = "120px"
 				)
-			)
+			),
+			column(1)
 		),
 
-		fluidRow(column(12, hr())),
+		br(),
+		br(),
 
-		fluidRow(			
-			column(3, align = 'center',
+		fluidRow(	
+			column(1),		
+			column(2, align = 'right',
 				img(src = 'ggplot2_logo.png', width = '100px', height = '100px')
 			),
 			column(6, align = 'center',
-				h5("Compare data across categories")
+				h5("Visualize data using ggplot2 (based on Grammar of Graphics)")
 			),
-			column(3, align = 'center',
+			column(2, align = 'left',
 				actionButton(inputId = "click_ggplot2", 
 					label = "Click Here",
 					width = "120px"
 				)
-			)
+			),
+			column(1)
 		),
 
-		fluidRow(column(12, hr())),
+		br(),
+		br(),
 
 		fluidRow(			
-			column(3, align = 'center',
+			column(1),
+			column(2, align = 'right',
 				img(src = 'highcharts_logo.png', width = '40px', height = '40px'),
 				img(src = 'bokeh_logo.png', width = '40px', height = '40px'),
 				img(src = 'plotly_logo.png', width = '40px', height = '40px')
 			),
 			column(6, align = 'center',
-				h5("Compare data across categories")
+				h5("Visualize data using plotly, rbokeh or highcharts")
 			),
-			column(3, align = 'center',
+			column(2, align = 'left',
 				actionButton(inputId = "click_prh", 
 					label = "Click Here",
 					width = "120px"
 				)
-			)
+			),
+			column(1)
 		),
 
-		fluidRow(column(12, hr()))
+		fluidRow(column(12))
 		
 	)
 
 )
+
+
+
+
+
+
+
