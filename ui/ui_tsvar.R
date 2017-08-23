@@ -8,8 +8,6 @@ tabPanel('Two Sample Variance', value = 'tab_tsvartest',
       column(6, align = 'right',
         actionButton(inputId='tsvarlink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/var_test.html', '_blank')"),
-        actionButton(inputId='tsvarlink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/two-sample-variance-test.html', '_blank')"),
         actionButton(inputId='tsvarlink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

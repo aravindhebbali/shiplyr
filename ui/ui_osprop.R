@@ -8,8 +8,6 @@ tabPanel('One Sample Proportion', value = 'tab_osproptest',
       column(6, align = 'right',
         actionButton(inputId='osproplink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/prop_test.html', '_blank')"),
-        actionButton(inputId='osproplink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/one-sample-proportion-test.html', '_blank')"),
         actionButton(inputId='osproplink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

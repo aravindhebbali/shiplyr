@@ -8,8 +8,6 @@ tabPanel('McNemar Test', value = 'tab_mcnemar',
       column(4, align = 'right',
         actionButton(inputId='mclink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/mcnemar_test.html', '_blank')"),
-        actionButton(inputId='mclink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/mcnemars-test.html', '_blank')"),
         actionButton(inputId='mclink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

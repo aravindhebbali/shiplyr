@@ -12,8 +12,6 @@ tabPanel('Levene Test', value = 'tab_levtest',
       column(6, align = 'right',
         actionButton(inputId='levtestlink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/levene_test.html', '_blank')"),
-        actionButton(inputId='levtestlink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/levenes-test.html', '_blank')"),
         actionButton(inputId='levtestlink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

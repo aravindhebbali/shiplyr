@@ -14,8 +14,6 @@ tabPanel('Heteroskedasticity', value = 'tab_hetero',
                 column(6, align = 'right',
                   actionButton(inputId='bplink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_bp_test.html', '_blank')"),
-                  actionButton(inputId='bplink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/heteroskedasticity.html#breusch-pagan-test', '_blank')"),
                   actionButton(inputId='bplink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -104,8 +102,6 @@ tabPanel('Heteroskedasticity', value = 'tab_hetero',
                 column(6, align = 'right',
                   actionButton(inputId='bartlink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_bartlett_test.html', '_blank')"),
-                  actionButton(inputId='bartlink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/heteroskedasticity.html#bartlett-test', '_blank')"),
                   actionButton(inputId='bartlink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -214,8 +210,6 @@ tabPanel('Heteroskedasticity', value = 'tab_hetero',
                 column(6, align = 'right',
                   actionButton(inputId='freglink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_f_test.html', '_blank')"),
-                  actionButton(inputId='freglink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/heteroskedasticity.html#f-test', '_blank')"),
                   actionButton(inputId='freglink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -290,8 +284,6 @@ tabPanel('Heteroskedasticity', value = 'tab_hetero',
                 column(6, align = 'right',
                   actionButton(inputId='scorelink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_score_test.html', '_blank')"),
-                  actionButton(inputId='scorelink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/heteroskedasticity.html#score-test', '_blank')"),
                   actionButton(inputId='scorelink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )

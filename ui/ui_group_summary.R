@@ -11,8 +11,6 @@ tabPanel('Group Summary', value = 'tab_gsummary',
              column(4, align = 'right',
                actionButton(inputId='gstatlink1', label="Help", icon = icon("question-circle"),
                  onclick ="window.open('http://google.com', '_blank')"),
-               actionButton(inputId='gstatlink2', label="Tutorial", icon = icon("university"),
-                 onclick ="window.open('http://google.com', '_blank')"),
                actionButton(inputId='gstatlink3', label="Demo", icon = icon("video-camera"),
                  onclick ="window.open('http://google.com', '_blank')")
              )

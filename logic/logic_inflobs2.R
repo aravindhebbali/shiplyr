@@ -8,8 +8,6 @@ output$ui_inflobslink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='cdbplink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_cooksd_barplot.html', '_blank')"),
-                  actionButton(inputId='cdbplink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#cooks-d-bar-plot', '_blank')"),
                   actionButton(inputId='cdbplink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -23,8 +21,6 @@ output$ui_inflobslink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='cdclink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_cooksd_chart.html', '_blank')"),
-                  actionButton(inputId='cdclink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#cooks-d-chart', '_blank')"),
                   actionButton(inputId='cdclink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -38,8 +34,6 @@ output$ui_inflobslink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='dfblink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_dfbetas_panel.html', '_blank')"),
-                  actionButton(inputId='dfblink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#dfbetas-panel', '_blank')"),
                   actionButton(inputId='dfblink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -53,8 +47,6 @@ output$ui_inflobslink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='dfitslink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_dffits_plot.html', '_blank')"),
-                  actionButton(inputId='dfitslink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#dffits-plot', '_blank')"),
                   actionButton(inputId='dfitslink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -68,8 +60,6 @@ output$ui_inflobslink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='dsrvsplink1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_dsrvsp_plot.html', '_blank')"),
-          actionButton(inputId='dsrvsplink2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#deleted-studentized-residual-vs-fitted-values-plot', '_blank')"),
           actionButton(inputId='dsrvsplink3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )
@@ -83,8 +73,6 @@ output$ui_inflobslink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='hadiplink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_hadi_plot.html', '_blank')"),
-                  actionButton(inputId='hadiplink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#hadi-plot', '_blank')"),
                   actionButton(inputId='hadiplink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -98,8 +86,6 @@ output$ui_inflobslink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='srvslev1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rsdlev_plot.html', '_blank')"),
-          actionButton(inputId='srvslev2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#studentized-residuals-vs-leverage-plot-1', '_blank')"),
           actionButton(inputId='srvslev3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )
@@ -113,8 +99,6 @@ output$ui_inflobslink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='srplot1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_srsd_plot.html', '_blank')"),
-          actionButton(inputId='srplot2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#studentized-residual-plot', '_blank')"),
           actionButton(inputId='srplot3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )
@@ -128,8 +112,6 @@ output$ui_inflobslink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='srchart1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_srsd_chart.html', '_blank')"),
-          actionButton(inputId='srchart2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#studentized-residual-chart', '_blank')"),
           actionButton(inputId='srchart3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )
@@ -143,8 +125,6 @@ output$ui_inflobslink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='potreslink1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_potrsd_plot.html', '_blank')"),
-          actionButton(inputId='potreslink2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/measures-of-influence.html#potential-residual-plot', '_blank')"),
           actionButton(inputId='potreslink3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )

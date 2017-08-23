@@ -11,8 +11,6 @@ tabPanel('Normal Distribution', value = 'tab_norm',
       column(4, align = 'right',
         actionButton(inputId='ndistlink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/norm_plot.html', '_blank')"),
-        actionButton(inputId='ndistlink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/descriptr-book/normal-distribution.html', '_blank')"),
         actionButton(inputId='ndistlink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

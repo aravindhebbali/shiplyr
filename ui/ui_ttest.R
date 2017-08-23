@@ -9,8 +9,6 @@ tabPanel('One Sample t', value = 'tab_ttest',
       column(4, align = 'right',
         actionButton(inputId='ostlink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/ttest.html', '_blank')"),
-        actionButton(inputId='ostlink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/one-sample-t-test.html', '_blank')"),
         actionButton(inputId='ostlink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

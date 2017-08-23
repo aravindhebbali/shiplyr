@@ -8,8 +8,6 @@ output$ui_mfitlink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='rfslink1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rfs_plot.html', '_blank')"),
-          actionButton(inputId='rfslink2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/model-fit-assessment.html#residual-fit-spread-plot', '_blank')"),
           actionButton(inputId='rfslink3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )
@@ -23,8 +21,6 @@ output$ui_mfitlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='corlink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_correlations.html', '_blank')"),
-                  actionButton(inputId='corlink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/model-fit-assessment.html#correlations', '_blank')"),
                   actionButton(inputId='corlink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -38,8 +34,6 @@ output$ui_mfitlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='ovsplink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_ovsp_plot.html', '_blank')"),
-                  actionButton(inputId='ovsplink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/model-fit-assessment.html#observed-vs-predicted-plot', '_blank')"),
                   actionButton(inputId='ovsplink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -53,8 +47,6 @@ output$ui_mfitlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='lfitlink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/dffits_plot.html', '_blank')"),
-                  actionButton(inputId='lfitlink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('http://google.com', '_blank')"),
                   actionButton(inputId='lfitlink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -68,8 +60,6 @@ output$ui_mfitlink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='dpanelink1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_diagnostic_panel.html', '_blank')"),
-          actionButton(inputId='dpanelink2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/model-fit-assessment.html#diagnostics-panel', '_blank')"),
           actionButton(inputId='dpanelink3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )

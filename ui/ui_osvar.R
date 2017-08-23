@@ -9,8 +9,6 @@ tabPanel('One Sample Variance', value = 'tab_osvartest',
       column(6, align = 'right',
         actionButton(inputId='osvarlink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/os_vartest.html', '_blank')"),
-        actionButton(inputId='osvarlink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/one-sample-variance-test.html', '_blank')"),
         actionButton(inputId='osvarlink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

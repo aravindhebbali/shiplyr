@@ -9,8 +9,6 @@ tabPanel('Regression', value = 'tab_regress',
       column(6, align = 'right',
         actionButton(inputId='mlr1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_regress.html', '_blank')"),
-        actionButton(inputId='mlr2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/multiple-linear-regression.html', '_blank')"),
         actionButton(inputId='mlr3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

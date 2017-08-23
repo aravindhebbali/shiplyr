@@ -9,8 +9,6 @@ tabPanel('Collinearity Diagnostics', value = 'tab_regcollin',
                 column(6, align = 'right',
                   actionButton(inputId='cdiaglink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_coll_diag.html', '_blank')"),
-                  actionButton(inputId='cdiaglink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/collinearity-diagnostics.html', '_blank')"),
                   actionButton(inputId='cdiaglink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )

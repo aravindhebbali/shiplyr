@@ -12,8 +12,6 @@ tabPanel('Runs Test', value = 'tab_runs',
       column(6, align = 'right',
         actionButton(inputId='runslink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/runs_test.html', '_blank')"),
-        actionButton(inputId='runslink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/runs-test.html', '_blank')"),
         actionButton(inputId='runslink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

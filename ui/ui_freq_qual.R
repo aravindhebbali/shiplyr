@@ -11,8 +11,6 @@ tabPanel('Frequency - I', value = 'tab_fqual',
             column(6, align = 'right',
               actionButton(inputId='fqualink1', label="Help", icon = icon("question-circle"),
                 onclick ="window.open('http://google.com', '_blank')"),
-              actionButton(inputId='fqualink2', label="Tutorial", icon = icon("university"),
-                onclick ="window.open('http://google.com', '_blank')"),
               actionButton(inputId='fqualink3', label="Demo", icon = icon("video-camera"),
                 onclick ="window.open('http://google.com', '_blank')")
             )

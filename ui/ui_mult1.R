@@ -8,8 +8,6 @@ tabPanel('Multiple 1 Way Tables', value = 'tab_mult1',
       column(4, align = 'right',
         actionButton(inputId='multonelink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('http://google.com', '_blank')"),
-        actionButton(inputId='multonelink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('http://google.com', '_blank')"),
         actionButton(inputId='multonelink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

@@ -13,8 +13,6 @@ tabPanel('Cross Table', value = 'tab_cross',
               column(7, align = 'right',
                 actionButton(inputId='crosstablink1', label="Help", icon = icon("question-circle"),
                   onclick ="window.open('http://google.com', '_blank')"),
-                actionButton(inputId='crosstablink2', label="Tutorial", icon = icon("university"),
-                  onclick ="window.open('http://google.com', '_blank')"),
                 actionButton(inputId='crosstablink3', label="Demo", icon = icon("video-camera"),
                   onclick ="window.open('http://google.com', '_blank')")
               )

@@ -8,8 +8,6 @@ tabPanel('Cochran Test', value = 'tab_cochran',
       column(4, align = 'right',
         actionButton(inputId='cochranlink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/cochran_test.html', '_blank')"),
-        actionButton(inputId='cochranlink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/cochrans-q-test.html', '_blank')"),
         actionButton(inputId='cochranlink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

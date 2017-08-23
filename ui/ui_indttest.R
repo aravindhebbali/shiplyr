@@ -10,8 +10,6 @@ tabPanel('Independent Sample t', value = 'tab_indttest',
       column(6, align = 'right',
         actionButton(inputId='indttest1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/ind_ttest.html', '_blank')"),
-        actionButton(inputId='indttest2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/independent-sample-t-test.html', '_blank')"),
         actionButton(inputId='indttest3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

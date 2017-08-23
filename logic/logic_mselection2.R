@@ -10,8 +10,6 @@ output$ui_mselectlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='allsub1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_all_subset.html', '_blank')"),
-                  actionButton(inputId='allsub2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-selection-procedures.html#all-subset-regression', '_blank')"),
                   actionButton(inputId='allsub3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -27,8 +25,6 @@ output$ui_mselectlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='bestsub1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_best_subset.html', '_blank')"),
-                  actionButton(inputId='bestsub2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-selection-procedures.html#best-subset-regression', '_blank')"),
                   actionButton(inputId='bestsub3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -46,8 +42,6 @@ output$ui_mselectlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='stepwise1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepwise.html', '_blank')"),
-                  actionButton(inputId='stepwise2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-selection-procedures.html#stepwise-regression', '_blank')"),
                   actionButton(inputId='stepwise3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -65,8 +59,6 @@ output$ui_mselectlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='stepf1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_step_forward.html', '_blank')"),
-                  actionButton(inputId='stepf2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-selection-procedures.html#stepwise-forward-regression', '_blank')"),
                   actionButton(inputId='stepf3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -84,8 +76,6 @@ output$ui_mselectlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='stepb1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_step_backward.html', '_blank')"),
-                  actionButton(inputId='stepb2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-selection-procedures.html#stepwise-backward-regression', '_blank')"),
                   actionButton(inputId='stepb3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -103,8 +93,6 @@ output$ui_mselectlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='stepaicf1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepaic_forward.html', '_blank')"),
-                  actionButton(inputId='stepaicf2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-selection-procedures.html#stepwise-aic-forward-regression', '_blank')"),
                   actionButton(inputId='stepaicf3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -122,8 +110,6 @@ output$ui_mselectlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='stepaicb1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepaic_backward.html', '_blank')"),
-                  actionButton(inputId='stepaicb2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-selection-procedures.html#stepwise-aic-backward-regression', '_blank')"),
                   actionButton(inputId='stepaicb3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -141,8 +127,6 @@ output$ui_mselectlink <- renderUI({
                 column(6, align = 'right',
                   actionButton(inputId='stepaicbo1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepaic_both.html', '_blank')"),
-                  actionButton(inputId='stepaicbo2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-selection-procedures.html#stepwise-aic-regression', '_blank')"),
                   actionButton(inputId='stepaicbo3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )

@@ -10,8 +10,6 @@ tabPanel('Summary', value = 'tab_summary',
         column(4, align = 'right',
           actionButton(inputId='sumrylink1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/summary_stats.html', '_blank')"),
-          actionButton(inputId='sumrylink2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/descriptr-book/measures-of-location.html#summary-statistics', '_blank')"),
           actionButton(inputId='sumrylink3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )

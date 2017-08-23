@@ -17,8 +17,6 @@ tabPanel('Variable Contribution', value = 'tab_regvarcont',
                 column(6, align = 'right',
                   actionButton(inputId='advarlink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_avplots.html', '_blank')"),
-                  actionButton(inputId='advarlink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-contribution.html#added-variable-plot-partial-regression-plot', '_blank')"),
                   actionButton(inputId='advarlink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -73,8 +71,6 @@ tabPanel('Variable Contribution', value = 'tab_regvarcont',
                 column(6, align = 'right',
                   actionButton(inputId='regcprp1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rpc_plot.html', '_blank')"),
-                  actionButton(inputId='regcprp2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-contribution.html#residual-plus-component-plot', '_blank')"),
                   actionButton(inputId='regcprp3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )
@@ -126,8 +122,6 @@ tabPanel('Variable Contribution', value = 'tab_regvarcont',
                 column(6, align = 'right',
                   actionButton(inputId='rvsrlink1', label="Help", icon = icon("question-circle"),
                     onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rvsr_plot.html', '_blank')"),
-                  actionButton(inputId='rvsrlink2', label="Tutorial", icon = icon("university"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/variable-contribution.html#residual-vs-regressor-plots-1', '_blank')"),
                   actionButton(inputId='rvsrlink3', label="Demo", icon = icon("video-camera"),
                     onclick ="window.open('http://google.com', '_blank')")
                 )

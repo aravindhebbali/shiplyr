@@ -8,8 +8,6 @@ tabPanel('Paired Sample t', value = 'tab_ptest',
       column(6, align = 'right',
         actionButton(inputId='ab1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/paired_ttest.html', '_blank')"),
-        actionButton(inputId='ab2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/paired-sample-t-test.html', '_blank')"),
         actionButton(inputId='ab3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

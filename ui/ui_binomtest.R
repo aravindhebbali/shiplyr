@@ -9,8 +9,6 @@ tabPanel('Binomial Test', value = 'tab_binomtest',
       column(6, align = 'right',
         actionButton(inputId='binomtestlink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/binom_calc.html', '_blank')"),
-        actionButton(inputId='binomtestlink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/binomial-test.html', '_blank')"),
         actionButton(inputId='binomtestlink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

@@ -8,8 +8,6 @@ output$ui_resdiaglink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='rvsp1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rvsp_plot.html', '_blank')"),
-          actionButton(inputId='rvsp2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/residual-diagnostics.html#residual-vs-fitted-values-plot', '_blank')"),
           actionButton(inputId='rvsp3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )
@@ -22,8 +20,6 @@ output$ui_resdiaglink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='rbplot1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rsd_boxplot.html', '_blank')"),
-          actionButton(inputId='rbplot2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/residual-diagnostics.html#residual-box-plot', '_blank')"),
           actionButton(inputId='rbplot3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )
@@ -37,8 +33,6 @@ output$ui_resdiaglink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='rhist1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rsd_hist.html', '_blank')"),
-          actionButton(inputId='rhist2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/residual-diagnostics.html#residual-histogram', '_blank')"),
           actionButton(inputId='rhist3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )
@@ -52,8 +46,6 @@ output$ui_resdiaglink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='rqq1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rsd_qqplot.html', '_blank')"),
-          actionButton(inputId='rqq2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/residual-diagnostics.html#residual-qq-plot', '_blank')"),
           actionButton(inputId='rqq3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )
@@ -67,8 +59,6 @@ output$ui_resdiaglink <- renderUI({
         column(6, align = 'right',
           actionButton(inputId='resnorm1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_norm_test.html', '_blank')"),
-          actionButton(inputId='resnorm2', label="Tutorial", icon = icon("university"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr-book/residual-diagnostics.html#residual-normality-test', '_blank')"),
           actionButton(inputId='resnorm3', label="Demo", icon = icon("video-camera"),
             onclick ="window.open('http://google.com', '_blank')")
         )

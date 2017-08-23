@@ -8,8 +8,6 @@ tabPanel('One Way ANOVA', value = 'tab_anova',
       column(6, align = 'right',
         actionButton(inputId='anovalink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/owanova.html', '_blank')"),
-        actionButton(inputId='anovalink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/one-way-anova.html', '_blank')"),
         actionButton(inputId='anovalink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )

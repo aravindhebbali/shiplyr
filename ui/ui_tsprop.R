@@ -10,8 +10,6 @@ tabPanel('Two Sample Proportion', value = 'tab_tsproptest',
       column(6, align = 'right',
         actionButton(inputId='tsproplink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/ts_prop_test.html', '_blank')"),
-        actionButton(inputId='tsproplink2', label="Tutorial", icon = icon("university"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr-book/two-sample-proportion-test.html', '_blank')"),
         actionButton(inputId='tsproplink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )
