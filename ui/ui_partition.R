@@ -3,6 +3,18 @@ tabPanel('Partition', value = 'tab_partition', icon = icon('cut'),
 	fluidPage(
 
 		fluidRow(
+      column(6, align = 'left',
+        h4('Partition Data'),
+        p('Click on Yes to partition data into training and test set.')
+      ),
+      column(6, align = 'right',
+        actionButton(inputId='partitionlink', label="Demo", icon = icon("video-camera"),
+          onclick ="window.open('http://google.com', '_blank')")
+      )
+    ),
+    hr(),
+
+		fluidRow(
 			column(12, align = 'center',
 				h4('Do you want to partition data into training set and testing set?')
 			)

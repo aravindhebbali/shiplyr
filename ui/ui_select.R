@@ -3,6 +3,18 @@ tabPanel('Select Variables', value = 'tab_selvar',
 	fluidPage(
 
 		fluidRow(
+      column(6, align = 'left',
+        h4('Select Variables'),
+        p('Click on Yes to select variables.')
+      ),
+      column(6, align = 'right',
+        actionButton(inputId='selvarlink', label="Demo", icon = icon("video-camera"),
+          onclick ="window.open('http://google.com', '_blank')")
+      )
+    ),
+    hr(),
+
+		fluidRow(
 			column(12, align = 'center',
 				h4('Do you want to select variables?')
 			)

@@ -3,6 +3,18 @@ tabPanel('Sample', value = 'tab_sample', icon = icon('random'),
 	fluidPage(
 
 		fluidRow(
+      column(6, align = 'left',
+        h4('Sample Data'),
+        p('Click on Yes to create a random sample of data.')
+      ),
+      column(6, align = 'right',
+        actionButton(inputId='samplelink', label="Demo", icon = icon("video-camera"),
+          onclick ="window.open('http://google.com', '_blank')")
+      )
+    ),
+    hr(),
+
+		fluidRow(
 			column(12, align = 'center',
 				h4('Draw a random sample of the data?')
 			)
