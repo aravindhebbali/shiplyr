@@ -176,6 +176,11 @@ observeEvent(input$click_inference, {
 	updateNavlistPanel(session, 'navlist_home', 'tab_infer_home')
 })
 
+observeEvent(input$click_model, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_home_analyze')
+	updateNavlistPanel(session, 'navlist_home', 'tab_model_home')
+})
+
 observeEvent(input$click_visualize, {
 	updateNavbarPage(session, 'mainpage', selected = 'tab_viz_home')
 	updateNavlistPanel(session, 'navlist_vizmenu', 'tab_home_viz')
@@ -487,4 +492,45 @@ observeEvent(input$click_hist_others, {
 observeEvent(input$click_pie_others, {
 	updateNavbarPage(session, 'mainpage', selected = 'tab_others')
 	updateNavlistPanel(session, 'navlist_others', 'tab_pie_prh')
+})
+
+## model links
+observeEvent(input$model_reg_click, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_reg')
+	updateNavlistPanel(session, 'navlist_reg', 'tab_regress')
+})
+
+observeEvent(input$model_varsel_click, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_reg')
+	updateNavlistPanel(session, 'navlist_reg', 'tab_var_select')
+})
+
+observeEvent(input$model_resdiag_click, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_reg')
+	updateNavlistPanel(session, 'navlist_reg', 'tab_res_diag')
+})
+
+observeEvent(input$model_het_click, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_reg')
+	updateNavlistPanel(session, 'navlist_reg', 'tab_hetero')
+})
+
+observeEvent(input$model_coldiag_click, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_reg')
+	updateNavlistPanel(session, 'navlist_reg', 'tab_regcollin')
+})
+
+observeEvent(input$model_infl_click, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_reg')
+	updateNavlistPanel(session, 'navlist_reg', 'tab_inflobs')
+})
+
+observeEvent(input$model_fit_click, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_reg')
+	updateNavlistPanel(session, 'navlist_reg', 'tab_mfit')
+})
+
+observeEvent(input$model_varcontrib_click, {
+	updateNavbarPage(session, 'mainpage', selected = 'tab_reg')
+	updateNavlistPanel(session, 'navlist_reg', 'tab_regvarcont')
 })
