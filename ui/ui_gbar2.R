@@ -1,4 +1,4 @@
-tabPanel('Bar Plot - II', value = 'tab_gbar2',
+tabPanel('2 Factor Bar Plot', value = 'tab_gbar2',
 
 	fluidPage(
 

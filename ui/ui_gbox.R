@@ -1,4 +1,4 @@
-tabPanel('Box Plot - I', value = 'tab_gbox',
+tabPanel('Box Plot', value = 'tab_gbox',
 
 	fluidPage(
 
