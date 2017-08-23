@@ -8,7 +8,6 @@ tabPanel('Transform', value = 'tab_transform',
                    p('Rename variables and modify data types.')
                  ),
                  column(6, align = 'right',
-                   actionButton(inputId='transhelp', label="Help", icon = icon("question-circle")),
                    actionButton(inputId='translink3', label="Demo", icon = icon("video-camera"),
                      onclick ="window.open('http://google.com', '_blank')")
                  )

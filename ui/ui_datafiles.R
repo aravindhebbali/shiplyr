@@ -22,7 +22,6 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 			            p('Upload data from a comma or tab separated file.')
 			          ),
 			          column(4, align = 'right',
-			            actionButton(inputId='uploadlink1', label="Help", icon = icon("question-circle")),
 			            actionButton(inputId='uploadlink2', label="Demo", icon = icon("video-camera"),
 			              onclick ="window.open('http://google.com', '_blank')")
 			          )
