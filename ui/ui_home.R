@@ -3,7 +3,7 @@ tabPanel("Home", value = "tab_analyze_home",
 		
 		fluidRow(
 			column(12, align = 'center',
-				h5('What do you want to do?')
+				h3('What do you want to do?')
 			)
 		),
 
@@ -11,105 +11,111 @@ tabPanel("Home", value = "tab_analyze_home",
 		br(),
 
 		fluidRow(
-			column(3, align = 'center',
+			column(1),
+			column(2, align = 'right',
 				img(src = 'summary1.png', width = '100px', height = '100px')
 			),
 			column(6, align = 'center',
 				h4('Descriptive Statisics'),
-				p('Generate descriptive/summary statistics including frequency tables, two way tables and 
-					group summary.')
+				p('Generate descriptive/summary statistics.')
 			),
-			column(3, align = 'center',
+			column(2, align = 'left',
 				br(),
 				actionButton(
 					inputId = 'click_descriptive',
 					label = 'Click Here',
 					width = '100px'
 				)
-			)
+			),
+			column(1)
 		),
 
 		br(),
 
 		fluidRow(
-			column(3, align = 'center',
+			column(1),
+			column(2, align = 'right',
 				img(src = 'normal.png', width = '100px', height = '100px')
 			),
 			column(6, align = 'center',
 				h4('Statistical Distributions'),
-				p('Generate descriptive/summary statistics including frequency tables, two way tables and 
-					group summary.')
+				p('Explore and visualize different statistical distributions.')
 			),
-			column(3, align = 'center',
+			column(2, align = 'left',
 				br(),
 				actionButton(
 					inputId = 'click_distributions',
 					label = 'Click Here',
 					width = '100px'
 				)
-			)
+			),
+			column(1)
 		),
 
 		br(),
 
 		fluidRow(
-			column(3, align = 'center',
+			column(1),
+			column(2, align = 'right',
 				img(src = 'ttest3.jpg', width = '100px', height = '100px')
 			),
 			column(6, align = 'center',
 				h4('Hypothesis Testing'),
-				p('Generate descriptive/summary statistics including frequency tables, two way tables and 
-					group summary.')
+				p('Test hypothesis using parametric and non-parametric tests.')
 			),
-			column(3, align = 'center',
+			column(2, align = 'left',
 				br(),
 				actionButton(
 					inputId = 'click_inference',
 					label = 'Click Here',
 					width = '100px'
 				)
-			)
+			),
+			column(1)
 		),
 
 		br(),
 
 		fluidRow(
-			column(3, align = 'center',
+			column(1),
+			column(2, align = 'right',
 				img(src = 'simple_reg.png', width = '100px', height = '100px')
 			),
 			column(6, align = 'center',
 				h4('Model Building'),
-				p('Tools for building simple and multiple linear regression models using the ordinary least 
-					squares method.')
+				p('Tools for building simple and multiple linear regression models.')
 			),
-			column(3, align = 'center',
+			column(2, align = 'left',
 				br(),
 				actionButton(
 					inputId = 'click_model',
 					label = 'Click Here',
 					width = '100px'
 				)
-			)
+			),
+			column(1)
 		),
 
 		br(),
 
 		fluidRow(
-			column(3, align = 'center',
+			column(1),
+			column(2, align = 'right',
 				img(src = 'visualize2.png', width = '100px', height = '100px')
 			),
 			column(6, align = 'center',
 				h4('Data Visualization'),
-				p('Visualize data using different libraries such as ggplot2, rbokeh, plotly and highcharts.')
+				p('Visualize data using ggplot2, rbokeh, plotly and highcharts.')
 			),
-			column(3, align = 'center',
+			column(2, align = 'left',
 				br(),
 				actionButton(
 					inputId = 'click_visualize',
 					label = 'Click Here',
 					width = '100px'
 				)
-			)	
+			),
+			column(1)	
 		)
 	)
 )
